@@ -1,20 +1,28 @@
+import disneyPlusImg from '../../assets/Disney+.png'
+
 export const projects = [
   {
-    title: 'Projeto E-commerce',
-    description: 'Uma plataforma de e-commerce completa com carrinho de compras, sistema de pagamento e painel administrativo.',
-    tags: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    github: 'https://github.com/seu-usuario/projeto-ecommerce',
-    demo: 'https://projeto-ecommerce.demo'
+    id: 1,
+    title: 'disneyplusImg',
+    img: disneyPlusImg,
+    description: 'Clone da interface do Disney+ com React, Redux e Styled Components, incluindo navegação e responsividade.',
+    tags: ['Html5', 'Css', 'JavaScript', 'Sass'],
+    github: 'https://github.com/brunokemel/clone_disneyplus',
+    demo: 'https://clone-disneyplus-brunok-emel.vercel.app/'
   },
   {
+    id: 2,
     title: 'App de Gerenciamento',
+    img: '',
     description: 'Aplicativo web para gerenciamento de tarefas e projetos com autenticação e dashboard interativo.',
-    tags: ['React', 'TypeScript', 'Firebase', 'Material UI'],
-    github: 'https://github.com/seu-usuario/app-gerenciamento',
-    demo: 'https://app-gerenciamento.demo'
+    tags: ['Html5', 'Css', 'JavaScript', 'Sass'],
+    github: 'https://github.com/brunokemel/clone_disneyplus',
+    demo: 'https://clone-disneyplus-brunok-emel.vercel.app/'
   },
   {
+    id: 3,
     title: 'Blog Pessoal',
+    img: '',
     description: 'Blog desenvolvido com Next.js, incluindo sistema de comentários e integração com CMS.',
     tags: ['Next.js', 'GraphQL', 'Tailwind CSS', 'Prisma'],
     github: 'https://github.com/seu-usuario/blog-pessoal',

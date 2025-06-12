@@ -12,15 +12,15 @@ export type Colors = {
 };
 
 export const colors: Colors= {
-    liColor: '#fff',     // Verde médio → cor de lista
-    primary: '#03fa6e',     // Verde neon → agora é sua cor principal
-    secondary: '#1dbf73',   // Verde médio → azul secundário substituído
-    background: '#171810',  // Preto esverdeado → fundo escuro
-    text: '#003049',        // Branco azulado → ótimo contraste com o fundo escuro
-    textLight: '#94a3b8',   // Cinza claro → para textos secundários
-    accent: '#0ea5e9',      // Azul vibrante → destaque moderno
-    error: '#ef4444',       // Mantido → vermelho tradicional
-    success: '#22c55e',     // Mantido → verde sucesso
+    liColor: '#ffffff',       // Branco puro → textos de lista bem visíveis
+    primary: '#f0f0f0',       // Cinza quase branco → ótimo para seções ou botões claros
+    secondary: '#1a1a1a',     // Cinza carvão → substitui o cinza escuro para mais contraste
+    background: '#0a0a0a',    // Preto profundo → fundo principal
+    text: '#ffffff',          // Branco puro → texto principal com contraste máximo
+    textLight: '#c0c0c0',     // Cinza claro → agora com mais brilho, bom pra subtítulos
+    accent: '#e11d48',        // Vermelho forte (tom cereja) → destaque moderno e vibrante
+    error: '#991b1b',         // Vermelho escuro intenso → mais visível sem ser berrante
+    success: '#22c55e',       // Verde mantido → bom contraste com fundo preto
 }
 
 

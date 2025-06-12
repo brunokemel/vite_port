@@ -28,9 +28,6 @@ function App() {
           <Projects />
           <Contact />
           <Footer />
-         {/* <FooterContainer>
-            <span>© {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.</span>
-        </FooterContainer> */}
         </AppContainer>
       </>
     </ThemeProvider>

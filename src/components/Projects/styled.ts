@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   font-size: 2.5rem;
-  color: ${colors.primary};
+  color: ${colors.background};
   text-align: center;
   margin-bottom: 3rem;
   font-weight: 700;
@@ -30,7 +30,7 @@ export const ProjectCard = styled.div`
   background: white;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 4px 6px ${colors.primary}15;
+  box-shadow: 0 4px 6px ${colors.background}15;
   transition: all 0.3s ease;
 
   &:hover {
@@ -48,6 +48,12 @@ export const ProjectImage = styled.div`
   justify-content: center;
   color: ${colors.primary};
   font-size: 3rem;
+
+   img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 export const ProjectContent = styled.div`
@@ -62,7 +68,7 @@ export const ProjectTitle = styled.h3`
 `;
 
 export const ProjectDescription = styled.p`
-  color: ${colors.textLight};
+  color: ${colors.background};
   margin-bottom: 1.5rem;
   line-height: 1.6;
 `;
@@ -76,7 +82,7 @@ export const ProjectTags = styled.div`
 
 export const Tag = styled.span`
   background-color: ${colors.primary}15;
-  color: ${colors.primary};
+  color: ${colors.accent};
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
   font-size: 0.9rem;
@@ -91,11 +97,12 @@ export const ProjectLink = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: ${colors.primary};
+  color: ${colors.background};
   font-weight: 500;
   transition: color 0.3s ease;
 
   &:hover {
-    color: ${colors.secondary};
+    color: ${colors.accent};
+    transform: translateY(-5px);
   }
 `;

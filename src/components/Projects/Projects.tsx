@@ -2,8 +2,7 @@ import { projects } from './Components'
 
 import { 
   GitHub as GitHubIcon,
-  Launch as LaunchIcon,
-  Code as CodeIcon
+  Launch as LaunchIcon
 } from '@mui/icons-material';
 
 import { 
@@ -29,11 +28,17 @@ const Projects = () => {
       <Container>
         <Title>Meus Projetos</Title>
         <ProjectsGrid>
-          {projects.map((project, index) => (
-            <ProjectCard key={index}>
-              <ProjectImage>
-                <CodeIcon />
-              </ProjectImage>
+          {projects.map((project) => (
+            <ProjectCard key={project.id}>
+              {project.img ? (
+                <ProjectImage>
+                  <img src={project.img} alt={project.title} style={{ width: "100%" }} />
+                </ProjectImage>
+              ) : (
+                <ProjectImage>
+                  <span>{project.title}</span>
+                </ProjectImage>
+              )}
               <ProjectContent>
                 <ProjectTitle>{project.title}</ProjectTitle>
                 <ProjectDescription>{project.description}</ProjectDescription>

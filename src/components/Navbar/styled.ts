@@ -10,9 +10,9 @@ export const Nav = styled.nav<{ isScrolled: boolean }>`
   z-index: 1000;
   padding: 1rem 2rem;
   background-color: ${({ isScrolled }) => 
-    isScrolled ? colors.background : 'transparent'};
+    isScrolled ? colors.secondary : 'transparent'};
   box-shadow: ${({ isScrolled }) => 
-    isScrolled ? `0 2px 4px ${colors.primary}15` : 'none'};
+    isScrolled ? `0 2px 4px ${colors.accent}15` : 'none'};
   transition: all 0.3s ease;
 `;
 
@@ -27,7 +27,7 @@ export const NavContainer = styled.div`
 export const Logo = styled.a`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${colors.primary};
+  color: ${colors.accent};
   text-decoration: none;
 `;
 
@@ -52,13 +52,13 @@ export const NavLinks = styled.div<{ isOpen: boolean }>`
 `;
 
 export const NavLink = styled.a`
-  color: ${colors.text};
+  color: ${colors.liColor};
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 
   &:hover {
-    color: ${colors.primary};
+    color: ${colors.accent};
   }
 `;
 

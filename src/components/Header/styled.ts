@@ -82,7 +82,7 @@ export const DownloadButton = styled.a`
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: ${colors.primary};
+  background-color: ${colors.accent};
   color: white;
   padding: 1rem 2rem;
   border-radius: 2rem;
@@ -90,12 +90,13 @@ export const DownloadButton = styled.a`
   font-weight: 600;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px ${colors.primary}25;
+  box-shadow: 0 4px 6px ${colors.accent}25;
 
   &:hover {
     background-color: ${colors.secondary};
     transform: translateY(-2px);
-    box-shadow: 0 6px 12px ${colors.primary}35;
+    box-shadow: 0 6px 12px ${colors.accent}35;
+    color : ${colors.accent};
   }
 `;
 
