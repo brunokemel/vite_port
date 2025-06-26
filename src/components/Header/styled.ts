@@ -1,7 +1,24 @@
 import { colors, breakpoints } from "../../styles/theme"
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
-export const HeaderContainer = styled.header`
+const gradient = keyframes`
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+`;
+
+
+type HeaderContainerProps = {
+  $isDesktop: boolean;
+};
+
+export const HeaderContainer = styled.header<HeaderContainerProps>`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -9,9 +26,21 @@ export const HeaderContainer = styled.header`
   align-items: center;
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(135deg, ${colors.primary}15 0%, ${colors.secondary}15 100%);
   position: relative;
   overflow: hidden;
+
+  background: linear-gradient(-45deg,${colors.backgroundHeader});
+  background-size: 400% 400%;
+
+  ${({ $isDesktop }) =>
+    $isDesktop
+      ? css`
+          transition: background-position 0.2s ease;
+        `
+      : css`
+          animation: ${gradient} 15s ease infinite;
+        `
+  }
 
   &::before {
     content: '';
@@ -24,6 +53,7 @@ export const HeaderContainer = styled.header`
     z-index: 0;
   }
 `;
+
 
 export const Content = styled.div`
   position: relative;
@@ -72,9 +102,9 @@ export const SocialLink = styled.a`
   box-shadow: 0 4px 6px ${colors.primary}15;
 
   &:hover {
-    color: ${colors.secondary};
+    color: ${colors.accent};
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px ${colors.primary}25;
+    box-shadow: 0 6px 12px ${colors.error}25;
   }
 `;
 

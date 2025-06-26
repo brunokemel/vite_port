@@ -13,7 +13,7 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   font-size: 2.5rem;
-  color: ${colors.background};
+  color: ${colors.text};
   text-align: center;
   margin-bottom: 3rem;
   font-weight: 700;

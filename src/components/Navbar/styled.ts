@@ -41,12 +41,11 @@ export const NavLinks = styled.div<{ isOpen: boolean }>`
     top: 0;
     right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
     bottom: 0;
-    width: 70%;
+    width: 50%;
     max-width: 300px;
-    background-color: ${colors.background};
+    background-color: ${colors.accent}  ;
     flex-direction: column;
     padding: 5rem 2rem;
-    box-shadow: -2px 0 4px ${colors.primary}15;
     transition: right 0.3s ease;
   }
 `;

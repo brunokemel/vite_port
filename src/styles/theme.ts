@@ -9,18 +9,21 @@ export type Colors = {
   accent: string;
   error: string;
   success: string;
+  backgroundHeader: string;
 };
 
 export const colors: Colors= {
-    liColor: '#ffffff',       // Branco puro → textos de lista bem visíveis
-    primary: '#f0f0f0',       // Cinza quase branco → ótimo para seções ou botões claros
-    secondary: '#1a1a1a',     // Cinza carvão → substitui o cinza escuro para mais contraste
-    background: '#0a0a0a',    // Preto profundo → fundo principal
-    text: '#ffffff',          // Branco puro → texto principal com contraste máximo
-    textLight: '#c0c0c0',     // Cinza claro → agora com mais brilho, bom pra subtítulos
-    accent: '#e11d48',        // Vermelho forte (tom cereja) → destaque moderno e vibrante
-    error: '#991b1b',         // Vermelho escuro intenso → mais visível sem ser berrante
-    success: '#22c55e',       // Verde mantido → bom contraste com fundo preto
+    liColor: '#ffffff',          // Branco puro para listas, fácil leitura
+  primary: '#f5f5f7',          // Cinza muito claro, suave para botões/seções claras
+  secondary: '#2e2e2e',        // Cinza escuro forte, bom para textos secundários
+  background: '#121212',       // Preto quase total, mas menos agressivo que #0a0a0a
+  text: '#eaeaea',             // Branco off-white para texto principal, menos cansativo
+  textLight: '#a0a0a0',        // Cinza médio para subtítulos e textos menos importantes
+  accent: '#e11d48',           // Vermelho cereja para destaques
+  error: '#991b1b',            // Vermelho escuro intenso, claro e visível
+  success: '#22c55e',          // Verde vibrante para status positivo
+  backgroundHeader: 'linear-gradient(90deg, #e11d48 0%, #7e1e3b 50%, #1a1a1a 75%, #121212 100%)'
+    
 }
 
 

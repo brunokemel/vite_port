@@ -30,25 +30,25 @@ export const SkillCard = styled.div`
   background: white;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px ${colors.primary}15;
+  box-shadow: 0 4px 6px ${colors.accent}15;
   transition: all 0.3s ease;
   text-align: center;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 12px ${colors.primary}25;
+    box-shadow: 0 8px 12px ${colors.accent}25;
   }
 `;
 
 export const SkillIcon = styled.div`
   font-size: 3rem;
-  color: ${colors.primary};
+  color: ${colors.background};
   margin-bottom: 1rem;
 `;
 
 export const SkillTitle = styled.h3`
   font-size: 1.5rem;
-  color: ${colors.text};
+  color: ${colors.background};
   margin-bottom: 1rem;
   font-weight: 600;
 `;
@@ -57,7 +57,7 @@ export const SkillList = styled.ul`
   list-style: none;
   padding: 0;
   margin: 0;
-  color: ${colors.textLight};
+  color: ${colors.accent};
   line-height: 1.6;
 `;
 
