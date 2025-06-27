@@ -1,10 +1,11 @@
 import disneyPlusImg from '../../assets/Disney+.png'
 import serverNode from '../../assets/Server.png'
+import gruntSorteador from '../../assets/sorteadorGrunt.png'
 
 export const projects = [
   {
     id: 1,
-    title: 'disneyplusImg',
+    title: 'disneyplus Clone',
     img: disneyPlusImg,
     description: 'Clone da interface do Disney+ com React, Redux e Styled Components, incluindo navegação e responsividade.',
     tags: ['Html5', 'Css', 'JavaScript', 'Sass'],
@@ -23,8 +24,8 @@ export const projects = [
   {
     id: 3,
     title: 'Sorteador de Números',
-    img: '',
-    description: 'Sorteador de números desenvolvido.',
+    img: gruntSorteador,
+    description: 'Sorteador de números desenvolvido com HTML, LESS e Grunt, permitindo a seleção aleatória de números dentro de um intervalo definido pelo usuário.',
     tags: ['HTML', 'LESS', 'GRUNT'],
     github: 'https://github.com/brunokemel/sorteador_grunt',
     demo: 'https://sorteadorgruntbruno-two.vercel.app/'

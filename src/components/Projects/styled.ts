@@ -62,9 +62,11 @@ export const ProjectContent = styled.div`
 
 export const ProjectTitle = styled.h3`
   font-size: 1.5rem;
-  color: ${colors.text};
+  color: ${colors.accent};
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-style: italic;
 `;
 
 export const ProjectDescription = styled.p`

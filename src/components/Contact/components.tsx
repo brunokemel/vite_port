@@ -1,6 +1,7 @@
 import {
   Email as EmailIcon,
   LinkedIn as LinkedInIcon,
+  Instagram as InstagramIcon,
 } from '@mui/icons-material';
 import React from 'react';
 
@@ -20,8 +21,15 @@ export const contactInfo: ContactInfo[] = [
   },
   {
     icon: <LinkedInIcon />,
-    title: 'Bruno Kemel',
+    title: 'LinkedIn',
     info: 'Acesse meu perfil',
     link: 'https://www.linkedin.com/in/bruno-kemel/'
+  }
+  ,
+  {
+    icon: <InstagramIcon />,
+    title: 'Instagram',
+    info: '@kemel_develop',
+    link: 'https://www.instagram.com/kemel_develop/'
   }
 ]; 
