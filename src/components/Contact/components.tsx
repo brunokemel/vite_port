@@ -1,7 +1,6 @@
 import {
   Email as EmailIcon,
-  Phone as PhoneIcon,
-  LocationOn as LocationIcon
+  LinkedIn as LinkedInIcon,
 } from '@mui/icons-material';
 import React from 'react';
 
@@ -16,19 +15,13 @@ export const contactInfo: ContactInfo[] = [
   {
     icon: <EmailIcon />,
     title: 'Email',
-    info: 'seu-email@exemplo.com',
-    link: 'mailto:seu-email@exemplo.com'
+    info: 'br.kemel@gmail.com',
+    link: 'mailto:br.kemel@gmail.com'
   },
   {
-    icon: <PhoneIcon />,
-    title: 'Telefone',
-    info: '(00) 00000-0000',
-    link: 'tel:+5500000000000'
-  },
-  {
-    icon: <LocationIcon />,
-    title: 'Localização',
-    info: 'Sua Cidade, Estado',
-    link: 'https://maps.google.com'
+    icon: <LinkedInIcon />,
+    title: 'Bruno Kemel',
+    info: 'Acesse meu perfil',
+    link: 'https://www.linkedin.com/in/bruno-kemel/'
   }
 ]; 

@@ -30,7 +30,7 @@ export const ContactCard = styled.div`
   background: white;
   padding: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px ${colors.primary}15;
+  box-shadow: 0 4px 6px ${colors.success}15;
   text-align: center;
   transition: all 0.3s ease;
 
@@ -42,25 +42,25 @@ export const ContactCard = styled.div`
 
 export const ContactIcon = styled.div`
   font-size: 2.5rem;
-  color: ${colors.primary};
+  color: ${colors.accent};
   margin-bottom: 1rem;
 `;
 
 export const ContactTitle = styled.h3`
   font-size: 1.25rem;
-  color: ${colors.text};
+  color: ${colors.accent};
   margin-bottom: 0.5rem;
   font-weight: 600;
 `;
 
 export const ContactInfo = styled.p`
-  color: ${colors.textLight};
+  color: ${colors.accent};
   font-size: 1.1rem;
   line-height: 1.6;
 `;
 
 export const ContactLink = styled.a`
-  color: ${colors.primary};
+  color: ${colors.accent};
   text-decoration: none;
   transition: color 0.3s ease;
 
