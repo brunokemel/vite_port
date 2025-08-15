@@ -1,6 +1,8 @@
 import disneyPlusImg from '../../assets/Disney+.png'
 import serverNode from '../../assets/Server.png'
 import gruntSorteador from '../../assets/sorteadorGrunt.png'
+import python from '../../assets/Python.jpg'
+import calcpython from '../../assets/calcPYTHON.png'
 
 export const projects = [
   {
@@ -29,5 +31,19 @@ export const projects = [
     tags: ['HTML', 'LESS', 'GRUNT'],
     github: 'https://github.com/brunokemel/sorteador_grunt',
     demo: 'https://sorteadorgruntbruno-two.vercel.app/'
+  },
+  {
+    id: 4,
+    img: calcpython,
+    description: 'Calculadora simples desenvolvida com Python, utilizando o kinvy para a interface gráfica. Permite operações básicas como adição, subtração, multiplicação e divisão.',
+    tags: ['Python'],
+    github: 'https://github.com/brunokemel/kivyCALC_py/tree/main',
+  },
+  {
+    id: 5,
+    img: python,
+    description: 'Organizador de pastas desenvolvido com Python, utilizando o módulo os para manipulação de arquivos e diretórios. Permite organizar arquivos em pastas específicas com base em suas extensões.',
+    tags: ['Python'],
+    github: 'https://github.com/brunokemel/organizador_pastas'
   }
 ];
