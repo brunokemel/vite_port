@@ -3,6 +3,7 @@ import serverNode from '../../assets/Server.png'
 import gruntSorteador from '../../assets/sorteadorGrunt.png'
 import python from '../../assets/Python.jpg'
 import calcpython from '../../assets/calcPYTHON.png'
+import chatPython from '../../assets/ChatPython.jpg'
 
 export const projects = [
   {
@@ -45,5 +46,12 @@ export const projects = [
     description: 'Organizador de pastas desenvolvido com Python, utilizando o módulo os para manipulação de arquivos e diretórios. Permite organizar arquivos em pastas específicas com base em suas extensões.',
     tags: ['Python'],
     github: 'https://github.com/brunokemel/organizador_pastas'
+  },
+  {
+    id: 6,
+    img: chatPython,
+    description: 'Chat em tempo real desenvolvido com Python, utilizando sockets para comunicação entre cliente e servidor. Permite a troca de mensagens em tempo real entre múltiplos usuários.(Em desenvolvimento)',
+    tags: ['Python'],
+    github: 'https://github.com/brunokemel/chat_realtime'
   }
 ];
