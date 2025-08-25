@@ -4,6 +4,7 @@ import gruntSorteador from '../../assets/sorteadorGrunt.png'
 import python from '../../assets/Python.jpg'
 import calcpython from '../../assets/calcPYTHON.png'
 import chatPython from '../../assets/ChatPython.jpg'
+import cliTemp from '../../assets/CLItemp.png'
 
 export const projects = [
   {
@@ -34,11 +35,11 @@ export const projects = [
     demo: 'https://sorteadorgruntbruno-two.vercel.app/'
   },
   {
-    id: 4,
-    img: calcpython,
-    description: 'Calculadora simples desenvolvida com Python, utilizando o kinvy para a interface gráfica. Permite operações básicas como adição, subtração, multiplicação e divisão.',
-    tags: ['Python'],
-    github: 'https://github.com/brunokemel/kivyCALC_py/tree/main',
+    id:4,
+    img: cliTemp,
+    description: 'Aplicação de linha de comando que busca a temperatura atual de uma cidade usando a API OpenWeatherMap',
+    tags: ['Python', 'API ', 'OPEN-METEO'],
+    github: 'https://github.com/brunokemel/previs-o_temp'
   },
   {
     id: 5,
@@ -53,5 +54,13 @@ export const projects = [
     description: 'Chat em tempo real desenvolvido com Python, utilizando sockets para comunicação entre cliente e servidor. Permite a troca de mensagens em tempo real entre múltiplos usuários.(Em desenvolvimento)',
     tags: ['Python'],
     github: 'https://github.com/brunokemel/chat_realtime'
+  },
+  
+  {
+    id: 7,
+    img: calcpython,
+    description: 'Calculadora simples desenvolvida com Python, utilizando o kinvy para a interface gráfica. Permite operações básicas como adição, subtração, multiplicação e divisão.',
+    tags: ['Python'],
+    github: 'https://github.com/brunokemel/kivyCALC_py/tree/main',
   }
 ];
