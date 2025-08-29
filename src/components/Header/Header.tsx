@@ -48,8 +48,8 @@ const Header: React.FC = () => {
       <Content>
         <Title>Bruno Kemel</Title>
         <Subtitle>
-          Desenvolvedor Full Stack Júnior apaixonado por criar soluções
-          inovadoras e experiências digitais excepcionais
+          Desenvolvedor Júnior apaixonado por criar soluções
+          inovadoras e experiências digitais excepcionais usando front-end e back-end
         </Subtitle>
 
         <SocialLinks>
