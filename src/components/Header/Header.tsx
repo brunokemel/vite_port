@@ -10,6 +10,9 @@ import {
   ScrollIndicator
 } from './styled';
 
+// //impor emailScripts
+// import {handleSendEmail, createMailtoLink } from './email'
+
 import {
   GitHub as GitHubIcon,
   LinkedIn as LinkedInIcon,
@@ -48,8 +51,7 @@ const Header: React.FC = () => {
       <Content>
         <Title>Bruno Kemel</Title>
         <Subtitle>
-          Desenvolvedor Júnior apaixonado por criar soluções
-          inovadoras e experiências digitais excepcionais usando front-end e back-end
+          Desenvolvedor back-end com foco em código limpo e bem escrito, visando melhor otimização do projetoto
         </Subtitle>
 
         <SocialLinks>
@@ -77,6 +79,7 @@ const Header: React.FC = () => {
           >
             <EmailIcon fontSize="inherit" />
           </SocialLink>
+
         </SocialLinks>
 
         <DownloadButton
