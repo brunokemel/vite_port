@@ -1,5 +1,5 @@
 import {
-  // Email as EmailIcon,
+  Email as EmailIcon,
   LinkedIn as LinkedInIcon,
   Instagram as InstagramIcon,
 } from '@mui/icons-material';
@@ -14,12 +14,12 @@ interface ContactInfo {
 }
 
 export const contactInfo: ContactInfo[] = [
-  // {
-  //   icon: <EmailIcon />,
-  //   title: 'Email',
-  //   info: 'br.kemel@gmail.com',
-  //   link: 'mailto:br.kemel@gmail.com?subject=Contato%20Profissional&body=Olá%20Bruno%2C%20gostaria%20de%20falar%20com%20você%20sobre...'
-  // },
+  {
+    icon: <EmailIcon />,
+    title: 'Email: br.kemel@gmail.com',
+    info: 'br.kemel@gmail.com',
+    link: 'mailto:br.kemel@gmail.com?subject=Contato%20Profissional&body=Olá%20Bruno%2C%20gostaria%20de%20falar%20com%20você%20sobre...'
+  },
   {
     icon: <LinkedInIcon />,
     title: 'LinkedIn',
