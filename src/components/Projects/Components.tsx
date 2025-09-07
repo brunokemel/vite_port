@@ -1,10 +1,11 @@
 import disneyPlusImg from '../../assets/Disney+.png'
-import serverNode from '../../assets/Server.png'
+// import serverNode from '../../assets/Server.png'
 import gruntSorteador from '../../assets/sorteadorGrunt.png'
 import python from '../../assets/Python.jpg'
 import calcpython from '../../assets/calcPYTHON.png'
 import chatPython from '../../assets/ChatPython.jpg'
 import cliTemp from '../../assets/CLItemp.png'
+import api from '../../assets/api.png'
 
 export const projects = [
   {
@@ -18,12 +19,12 @@ export const projects = [
   },
   {
     id: 2,
-    title: 'Chat Server',
-    img: serverNode,
-    description: 'Chat server desenvolvido com Node.js, Express e TypeScript, utilizando WebSockets para comunicação em tempo real. (Ainda em desenvolvimento)',
-    tags: ['React', 'Node.js', 'TypScript', 'Express'],
-    github: 'https://github.com/brunokemel/server',
-    demo: 'https://chat-teste-kemel.vercel.app/',
+    title: 'API ',
+    img: api,
+    description: 'API de usuarios com python desenvolvida com FastAPI, SQLAlchemy e SQLite, permitindo operações CRUD (Create, Read, Update, Delete) em um banco de dados de usuários.',
+    tags: ['Python', 'FastAPI', 'SQLAlchemy', 'SQLite'],
+    github: 'https://github.com/brunokemel/api_py',
+    demo: '',
   },
   {
     id: 3,
