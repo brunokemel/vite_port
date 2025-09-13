@@ -13,15 +13,15 @@ export type Colors = {
 };
 
 export const colors: Colors= {
-    liColor: '#ffffff',          // Branco puro para listas, fácil leitura
-  primary: '#f5f5f7',          // Cinza muito claro, suave para botões/seções claras
-  secondary: '#2e2e2e',        // Cinza escuro forte, bom para textos secundários
-  background: '#121212',       // Preto quase total, mas menos agressivo que #0a0a0a
-  text: '#eaeaea',             // Branco off-white para texto principal, menos cansativo
+  liColor: '#ffffff',          // Branco puro
+  primary: '#f5f5f7',          // Cinza muito claro
+  secondary: '#2e2e2e',        // Cinza escuro forte
+  background: '#121212',       // Preto quase total
+  text: '#eaeaea',             // Branco off-white para texto principal
   textLight: '#a0a0a0',        // Cinza médio para subtítulos e textos menos importantes
   accent: '#e11d48',           // Vermelho cereja para destaques
-  error: '#991b1b',            // Vermelho escuro intenso, claro e visível
-  success: '#22c55e',          // Verde vibrante para status positivo
+  error: '#991b1b',            // Vermelho escuro intenso
+  success: '#22c55e',          // Verde vibrante
   backgroundHeader: 'linear-gradient(90deg, #e11d48 0%, #7e1e3b 50%, #1a1a1a 75%, #121212 100%)'
     
 }
