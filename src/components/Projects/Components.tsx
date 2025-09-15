@@ -37,6 +37,7 @@ export const projects = [
   },
   {
     id:4,
+    title: 'Previsão do Tempo CLI',
     img: cliTemp,
     description: 'Aplicação de linha de comando que busca a temperatura atual de uma cidade usando a API OpenWeatherMap',
     tags: ['Python', 'API ', 'OPEN-METEO'],
@@ -44,6 +45,7 @@ export const projects = [
   },
   {
     id: 5,
+    title: 'Organizador de Pastas',
     img: python,
     description: 'Organizador de pastas desenvolvido com Python, utilizando o módulo os para manipulação de arquivos e diretórios. Permite organizar arquivos em pastas específicas com base em suas extensões.',
     tags: ['Python'],
@@ -51,6 +53,7 @@ export const projects = [
   },
   {
     id: 6,
+    title: 'Chat Realtime',
     img: chatPython,
     description: 'Chat em tempo real desenvolvido com Python, utilizando sockets para comunicação entre cliente e servidor. Permite a troca de mensagens em tempo real entre múltiplos usuários.(Em desenvolvimento)',
     tags: ['Python'],
@@ -59,6 +62,7 @@ export const projects = [
   
   {
     id: 7,
+    title: 'Calculadora python',
     img: calcpython,
     description: 'Calculadora simples desenvolvida com Python, utilizando o kinvy para a interface gráfica. Permite operações básicas como adição, subtração, multiplicação e divisão.',
     tags: ['Python'],

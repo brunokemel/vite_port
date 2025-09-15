@@ -39,7 +39,7 @@ const navLinks = [
     <Nav isScrolled={isScrolled}>
       <NavContainer>
         <Logo href="https://github.com/brunokemel">
-          BKdevolper
+          BK<span>devolper</span>
           </Logo>
         
         <MenuButton onClick={toggleMenu} aria-label="Abrir menu">

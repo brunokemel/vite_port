@@ -25,10 +25,15 @@ export const NavContainer = styled.div`
 `;
 
 export const Logo = styled.a`
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: ${colors.accent};
+  font-size: 3rem;
+  font-weight: 900;
+  color: ${colors.logoColor};
+  font-family: "Saira", sans-serif;
   text-decoration: none;
+
+  span {
+    color: ${colors.spanColor}; 
+    font-weight: 600;
 `;
 
 export const NavLinks = styled.div<{ isOpen: boolean }>`
