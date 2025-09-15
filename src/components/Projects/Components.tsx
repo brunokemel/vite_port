@@ -1,6 +1,6 @@
 import disneyPlusImg from '../../assets/Disney+.png'
 // import serverNode from '../../assets/Server.png'
-import gruntSorteador from '../../assets/sorteadorGrunt.png'
+import ChatBoot from '../../assets/ChatBoot.png'
 import python from '../../assets/Python.jpg'
 import calcpython from '../../assets/calcPYTHON.png'
 import chatPython from '../../assets/ChatPython.jpg'
@@ -28,12 +28,12 @@ export const projects = [
   },
   {
     id: 3,
-    title: 'Sorteador de Números',
-    img: gruntSorteador,
-    description: 'Sorteador de números desenvolvido com HTML, LESS e Grunt, permitindo a seleção aleatória de números dentro de um intervalo definido pelo usuário.',
-    tags: ['HTML', 'LESS', 'GRUNT'],
-    github: 'https://github.com/brunokemel/sorteador_grunt',
-    demo: 'https://sorteadorgruntbruno-two.vercel.app/'
+    title: 'Chat Bot',
+    img: ChatBoot,
+    description: 'Chat bot simples desenvolvido com React e TypeScript, utilizando a API do OpenAI para gerar respostas automáticas com base nas mensagens do usuário. (Em desenvolvimento)',
+    tags: ['ReactVite', 'Typescript', 'ReactHooks'],
+    github: 'https://github.com/brunokemel/chat_bot',
+    demo: 'https://chat-bot-black-chi.vercel.app/'
   },
   {
     id:4,
