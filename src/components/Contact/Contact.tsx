@@ -1,4 +1,6 @@
 import { contactInfo } from './components'; // Import the contact info array
+import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollAnimationTitle } from '../../hooks/useScrollAnimationTitle';
 
 import {
   ContactSection,
@@ -14,13 +16,16 @@ import {
 
 
 const Contact = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimationTitle();
+  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
+
   return (
     <ContactSection id="contato">
       <Container>
-        <Title>Entre em Contato</Title>
-        <ContactGrid>
+        <Title ref={titleRef} $isVisible={titleVisible}>Entre em Contato</Title>
+        <ContactGrid ref={gridRef} $isVisible={gridVisible}>
           {contactInfo.map((contact, index) => (
-            <ContactCard key={index}>
+            <ContactCard key={index} $delay={index * 0.1}>
               <ContactIcon>{contact.icon}</ContactIcon>
               <ContactTitle>{contact.title}</ContactTitle>
               <ContactInfo>

@@ -13,9 +13,47 @@ const gradient = keyframes`
   }
 `;
 
+const slideInFromLeft = keyframes`
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`;
+
+
+const slideInFromBottom = keyframes`
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+const slideInFromTop = keyframes`
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 
 type HeaderContainerProps = {
   $isDesktop: boolean;
+};
+
+type AnimatedElementProps = {
+  $isVisible: boolean;
 };
 
 export const HeaderContainer = styled.header<HeaderContainerProps>`
@@ -59,12 +97,63 @@ export const Content = styled.div`
   position: relative;
   z-index: 1;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+`;
+
+export const ProfileSection = styled.div<AnimatedElementProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: ${({ $isVisible }) => $isVisible ? slideInFromTop : 'none'} 0.8s ease-out forwards;
+  opacity: 0;
+`;
+
+export const ProfileImage = styled.img`
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid ${colors.primary};
+  box-shadow: 0 8px 16px ${colors.primary}25;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px ${colors.primary}35;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 120px;
+    height: 120px;
+  }
+`;
+
+export const TextSection = styled.div<AnimatedElementProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  animation: ${({ $isVisible }) => $isVisible ? slideInFromBottom : 'none'} 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+`;
+
+export const ActionsSection = styled.div<AnimatedElementProps>`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  animation: ${({ $isVisible }) => $isVisible ? slideInFromLeft : 'none'} 0.8s ease-out 0.4s forwards;
+  opacity: 0;
 `;
 
 export const Title = styled.h1`
   font-size: 3.5rem;
   color: ${colors.primary};
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   font-weight: 700;
   letter-spacing: -0.02em;
 
@@ -77,7 +166,7 @@ export const Subtitle = styled.h2`
   font-size: 1.75rem;
   color: ${colors.textLight};
   font-weight: 500;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   line-height: 1.4;
 
   @media (max-width: ${breakpoints.mobile}) {
@@ -89,7 +178,7 @@ export const SocialLinks = styled.div`
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 0;
 `;
 
 export const SocialLink = styled.a`

@@ -1,5 +1,6 @@
 import { colors } from "../../styles/theme"
 import styled from "styled-components";
+import { slideInFromBottom, slideInFromTop, scaleIn } from "../../styles/animations";
 
 export const ProjectsSection = styled.section`
   padding: 6rem 2rem;
@@ -11,27 +12,45 @@ export const Container = styled.div`
   margin: 0 auto;
 `;
 
-export const Title = styled.h2`
+type TitleProps = {
+  $isVisible: boolean;
+};
+
+export const Title = styled.h2<TitleProps>`
   font-size: 2.5rem;
   color: ${colors.text};
   text-align: center;
   margin-bottom: 3rem;
   font-weight: 700;
+  animation: ${({ $isVisible }) => $isVisible ? slideInFromTop : 'none'} 0.8s ease-out forwards;
+  opacity: 0;
 `;
 
-export const ProjectsGrid = styled.div`
+type ProjectsGridProps = {
+  $isVisible: boolean;
+};
+
+export const ProjectsGrid = styled.div<ProjectsGridProps>`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 1rem;
+  animation: ${({ $isVisible }) => $isVisible ? slideInFromBottom : 'none'} 0.8s ease-out 0.2s forwards;
+  opacity: 0;
 `;
 
-export const ProjectCard = styled.div`
+type ProjectCardProps = {
+  $delay: number;
+};
+
+export const ProjectCard = styled.div<ProjectCardProps>`
   background: white;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 6px ${colors.background}15;
   transition: all 0.3s ease;
+  animation: ${scaleIn} 0.6s ease-out ${({ $delay }) => $delay}s forwards;
+  opacity: 0;
 
   &:hover {
     transform: translateY(-5px);
