@@ -120,14 +120,16 @@ export const ProfileImage = styled.img`
   box-shadow: 0 8px 16px ${colors.primary}25;
   transition: all 0.3s ease;
   
+  
   &:hover {
     transform: scale(1.05);
     box-shadow: 0 12px 24px ${colors.primary}35;
   }
 
   @media (max-width: ${breakpoints.mobile}) {
-    width: 120px;
-    height: 120px;
+    width: 75px;
+    height: 75px;
+    margin-top: 40px;
   }
 `;
 

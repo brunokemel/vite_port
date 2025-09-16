@@ -34,6 +34,11 @@ export const Logo = styled.a`
   span {
     color: ${colors.spanColor}; 
     font-weight: 600;
+  }
+
+ @media (max-width: ${breakpoints.tablet}) {
+    font-size: 1rem; 
+  }
 `;
 
 export const NavLinks = styled.div<{ isOpen: boolean }>`
