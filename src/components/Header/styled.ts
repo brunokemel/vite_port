@@ -183,20 +183,30 @@ export const SocialLinks = styled.div`
   margin: 0;
 `;
 
-export const SocialLink = styled.a`
+export const bounce = keyframes`
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+`;
+
+type SocialLinkProps = {
+  $delay?: string;
+};
+
+export const SocialLink = styled.a<SocialLinkProps>`
   color: ${colors.primary};
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   transition: all 0.3s ease;
   padding: 0.5rem;
   border-radius: 50%;
-  background: ${colors.background};
-  box-shadow: 0 4px 6px ${colors.primary}15;
+  animation: bounce 7s infinite;
+  animation-delay: ${({ $delay }) => $delay || '0s'};
 
   &:hover {
     color: ${colors.accent};
     transform: translateY(-3px);
-    box-shadow: 0 6px 12px ${colors.error}25;
+    box-shadow: 0 6px 12px ${colors.success}25;
   }
+    
 `;
 
 export const DownloadButton = styled.a`

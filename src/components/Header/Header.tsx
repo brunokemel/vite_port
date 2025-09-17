@@ -88,6 +88,7 @@ const Header: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
+              $delay="0s"
             >
               <GitHubIcon fontSize="inherit" />
             </SocialLink>
@@ -97,6 +98,7 @@ const Header: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
+              $delay="0.2s"
             >
               <LinkedInIcon fontSize="inherit" />
             </SocialLink>
@@ -104,6 +106,7 @@ const Header: React.FC = () => {
             <SocialLink
               href="mailto:br.kemel@gmail.com?subject=Contato%20Profissional&body=Olá%20Bruno%2C%20gostaria%20de%20falar%20com%20você%20sobre..."
               aria-label="Email"
+              $delay="0.3s"
             >
               <EmailIcon fontSize="inherit" />
             </SocialLink>
