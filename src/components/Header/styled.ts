@@ -1,5 +1,6 @@
 import { colors, breakpoints } from "../../styles/theme"
 import styled, { keyframes, css } from "styled-components";
+import type { SocialLinkProps } from "../../styles/animations";
 
 const gradient = keyframes`
   0% {
@@ -188,9 +189,7 @@ export const bounce = keyframes`
   50% { transform: translateY(-10px); }
 `;
 
-type SocialLinkProps = {
-  $delay?: string;
-};
+
 
 export const SocialLink = styled.a<SocialLinkProps>`
   color: ${colors.primary};

@@ -1,5 +1,10 @@
 import { keyframes } from 'styled-components';
 
+// Navbar props
+export type SocialLinkProps = {
+  $delay?: string;
+};
+
 export const slideInFromLeft = keyframes`
   0% {
     transform: translateX(-100%);
