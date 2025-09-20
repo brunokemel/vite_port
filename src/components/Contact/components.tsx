@@ -30,7 +30,7 @@ export const contactInfo: ContactInfo[] = [
   {
     icon: <InstagramIcon />,
     title: 'Instagram',
-    info: '@kemel_develop',
-    link: 'https://www.instagram.com/kemel_develop/'
+    info: '@kemel.js',
+    link: 'https://www.instagram.com/kemel.js/'
   }
 ]; 
