@@ -23,7 +23,7 @@ export const projects = [
     img: api,
     description: 'API de usuários em Python com FastAPI, MySQL e SQLAlchemy, com CRUD completo, autenticação JWT e validação de dados.',
     tags: ['Python', 'SQL Databases', 'JWT', 'Bcrypt', 'Pydantic', 'REST API'],
-    github: 'https://github.com/brunokemel/api_py',
+    github: 'https://github.com/brunokemel/api_crud',
     demo: '',
   },
   // {
