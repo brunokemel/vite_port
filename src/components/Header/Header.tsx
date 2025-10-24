@@ -113,7 +113,7 @@ const Header: React.FC = () => {
           </SocialLinks>
 
           <DownloadButton
-            href="https://drive.google.com/drive/folders/1D6Mvrr6CJCBeudPF8u8zEO1EqRbGtgiI?usp=sharing"
+            href="../../../public/assets/curriculo.pdf"
             download
           >
             <DescriptionIcon />
