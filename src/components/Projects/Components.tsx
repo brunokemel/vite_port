@@ -1,11 +1,9 @@
 import disneyPlusImg from '../../assets/Disney+.png'
-// import serverNode from '../../assets/Server.png'
-// import ChatBoot from '../../assets/ChatBoot.png'
 import python from '../../assets/Python.jpg'
 import calcpython from '../../assets/calcPYTHON.png'
-import chatPython from '../../assets/ChatPython.jpg'
 import cliTemp from '../../assets/CLItemp.png'
 import api from '../../assets/api.png'
+import ecommerce from '../../assets/Ecommerce.png'
 
 export const projects = [
   {
@@ -26,15 +24,15 @@ export const projects = [
     github: 'https://github.com/brunokemel/api_crud',
     demo: '',
   },
-  // {
-  //   id: 3,
-  //   title: 'Chat Bot',
-  //   img: ChatBoot,
-  //   description: 'Chat bot simples desenvolvido com React e TypeScript, utilizando a API do OpenAI para gerar respostas automáticas com base nas mensagens do usuário. (Em desenvolvimento)',
-  //   tags: ['ReactVite', 'Typescript', 'ReactHooks'],
-  //   github: 'https://github.com/brunokemel/chat_bot',
-  //   demo: 'https://chat-bot-black-chi.vercel.app/'
-  // },
+  {
+    id: 3,
+    title: 'E-commerce backend',
+    img: ecommerce,
+    description: 'Backend para e-commerce desenvolvido com TypeScript e Supabase, incluindo autenticação, gerenciamento de produtos e processamento de pedidos.',
+    tags: ['TypeScript', 'Supabase', 'PLpgSQL', 'Express', 'Dontenv', 'Docker'],
+    github: 'https://github.com/brunokemel/e-commerce-backend',
+    demo: ''
+  },
   {
     id:4,
     title: 'Previsão do Tempo CLI',
@@ -53,15 +51,6 @@ export const projects = [
   },
   {
     id: 6,
-    title: 'Chat Realtime',
-    img: chatPython,
-    description: 'Chat em tempo real desenvolvido com Python, utilizando sockets para comunicação entre cliente e servidor. Permite a troca de mensagens em tempo real entre múltiplos usuários.(Em desenvolvimento)',
-    tags: ['Python'],
-    github: 'https://github.com/brunokemel/chat_realtime'
-  },
-  
-  {
-    id: 7,
     title: 'Calculadora python',
     img: calcpython,
     description: 'Calculadora simples desenvolvida com Python, utilizando o kinvy para a interface gráfica. Permite operações básicas como adição, subtração, multiplicação e divisão.',

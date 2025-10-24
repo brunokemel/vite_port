@@ -13,6 +13,6 @@ export const skills = [
   {
     icon: <StorageIcon />,
     title: 'Backend',
-    items: ['Node.js', 'Express', 'SQL', 'REST APIs', 'Python']
+    items: ['Node.js', 'Express', 'SQL', 'REST APIs', 'Python', 'Supabase']
   }
 ];

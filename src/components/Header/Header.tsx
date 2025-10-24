@@ -76,7 +76,7 @@ const Header: React.FC = () => {
         <TextSection $isVisible={isVisible}>
           <Title>Bruno Kemel</Title>
           <Subtitle>
-            Desenvolvedor python apaixonado por tecnologia e sempre buscando evoluir como profissional.
+            Desenvolvedor back-end apaixonado por tecnologia e sempre buscando evoluir como profissional.
             Atuo no desenvolvimento de interfaces modernas e APIs funcionais.
           </Subtitle>
         </TextSection>
