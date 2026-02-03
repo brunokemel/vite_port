@@ -113,7 +113,7 @@ const Header: React.FC = () => {
           </SocialLinks>
 
           <DownloadButton
-            href="/assets/curriculo.pdf"
+            href="/assets/Bruno_Kemel_CV.pdf"
             download
           >
             <DescriptionIcon />
