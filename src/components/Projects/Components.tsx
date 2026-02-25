@@ -1,4 +1,5 @@
-import disneyPlusImg from '../../assets/Disney+.png'
+
+import plano_aulas from '../../assets/plano_aulas.png'
 import python from '../../assets/Python.jpg'
 import calcpython from '../../assets/calcPYTHON.png'
 import cliTemp from '../../assets/CLItemp.png'
@@ -8,12 +9,12 @@ import ecommerce from '../../assets/Ecommerce.png'
 export const projects = [
   {
     id: 1,
-    title: 'disneyplus Clone',
-    img: disneyPlusImg,
-    description: 'Clone da interface do Disney+ com React, Redux e Styled Components, incluindo navegação e responsividade.',
-    tags: ['Html5', 'Css', 'JavaScript', 'Sass'],
-    github: 'https://github.com/brunokemel/clone_disneyplus',
-    demo: 'https://clone-disneyplus-brunok-emel.vercel.app/'
+    title: 'Gerador plano de aulas',
+    img: plano_aulas,
+    description: 'Aplicação backend em TypeScript que gera planos de aula usando a API Generative AI (Gemini) e persiste os planos no Supabase.',
+    tags: ['Node', 'Supabase', 'React', 'TypeScript', 'Generative AI'],
+    github: 'https://github.com/brunokemel/Gerador-de-Planos',
+    demo: ''
   },
   {
     id: 2,
