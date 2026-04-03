@@ -18,7 +18,7 @@ export const Nav = styled.nav<{ isScrolled: boolean }>`
 export const  Dots = styled.div`
   display: flex;
   gap: 7px;
-  margin-right: -33rem;
+  margin-right: -38rem;
   align-items: center;
 `;
 

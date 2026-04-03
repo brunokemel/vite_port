@@ -67,6 +67,7 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   padding: 2rem;
   position: relative;
   overflow: hidden;
+   background-color: ${colors.bgColor};
 
   background: linear-gradient(-45deg,${colors.backgroundHeader});
   background-size: 400% 400%;
@@ -159,6 +160,7 @@ export const Title = styled.h1`
   margin-bottom: 0;
   font-weight: 700;
   letter-spacing: -0.02em;
+  font-family: "DM Mono", monospace;
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 2.5rem;
@@ -166,11 +168,13 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.h2`
-  font-size: 1.75rem;
+  font-size: 1.50rem;
   color: ${colors.textLight};
-  font-weight: 500;
+  font-weight: 200;
   margin-bottom: 0;
   line-height: 1.4;
+  font-family: "DM Mono", monospace;
+
 
   @media (max-width: ${breakpoints.mobile}) {
     font-size: 1.25rem;

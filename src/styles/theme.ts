@@ -14,6 +14,7 @@ export type Colors = {
   logoColor?: string;
   newHeaderColor?: string;
   blue?: string;
+  bgColor?: string;
 };
 
 export const colors: Colors= {
@@ -31,6 +32,7 @@ export const colors: Colors= {
   logoColor: '#ffffff',       // Branco puro para o logo
   newHeaderColor: '#1e1e2e', // Gradiente para o novo header
   blue: '#30304d',            // Azul vibrante para links e destaques
+  bgColor: '#0e0e1a;'
 
     
 }

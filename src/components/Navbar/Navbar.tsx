@@ -47,8 +47,8 @@ const navLinks = [
           <Dot color="#28c840" />
         </Dots>
         <Logo href="https://github.com/brunokemel">
-          <span>~/bruno-kemel</span> 
-          <Title>/ — portifolio</Title>
+          <span>~/bk</span> 
+          <Title> — portifolio</Title>
           </Logo>
         
         <MenuButton onClick={toggleMenu} aria-label="Abrir menu">
