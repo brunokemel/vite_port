@@ -8,10 +8,10 @@ type FooterProps = {
 
 export const Footer = styled.div<FooterProps>`
   text-align: center;
-  padding: 2rem;
-  color: ${colors.accent};
+  padding: 1rem;
+  color: ${colors.blue};
   font-size: 0.9rem;
-  background: linear-gradient(135deg, ${colors.primary}05 0%, ${colors.secondary}05 100%);
+  background: ${colors.red}, transparent;
   animation: ${({ $isVisible }) => $isVisible ? fadeIn : 'none'} 1s ease-out forwards;
   opacity: 0;
 `;

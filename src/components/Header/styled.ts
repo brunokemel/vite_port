@@ -1,18 +1,8 @@
 import { colors, breakpoints } from "../../styles/theme"
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes } from "styled-components";
 import type { SocialLinkProps } from "../../styles/animations";
 
-const gradient = keyframes`
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-`;
+
 
 const slideInFromLeft = keyframes`
   0% {
@@ -67,31 +57,7 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   padding: 2rem;
   position: relative;
   overflow: hidden;
-   background-color: ${colors.bgColor};
-
-  background: linear-gradient(-45deg,${colors.backgroundHeader});
-  background-size: 400% 400%;
-
-  ${({ $isDesktop }) =>
-    $isDesktop
-      ? css`
-          transition: background-position 0.2s ease;
-        `
-      : css`
-          animation: ${gradient} 15s ease infinite;
-        `
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, ${colors.primary}05 0%, transparent 70%);
-    top: -50%;
-    left: -50%;
-    z-index: 0;
-  }
+  background-color: ${colors.bgColor};
 `;
 
 

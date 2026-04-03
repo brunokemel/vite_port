@@ -1,18 +1,29 @@
-import { 
-  Code as CodeIcon,
-  Storage as StorageIcon
-} from '@mui/icons-material';
-
-
-export const skills = [
+export interface SkillGroup {
+  category: string;
+  color: string;
+  items: string[];
+}
+ 
+export const skillGroups: SkillGroup[] = [
   {
-    icon: <CodeIcon />,
-    title: 'Frontend',
-    items: ['React', 'TypeScript', 'HTML', 'CSS', 'JavaScript']
+    category: 'languages',
+    color: '#4ade80',
+    items: ['JavaScript', 'TypeScript', 'Python'],
   },
   {
-    icon: <StorageIcon />,
-    title: 'Backend',
-    items: ['Node.js', 'Express', 'SQL', 'REST APIs', 'Python', 'Supabase']
-  }
+    category: 'frontend',
+    color: '#60a5fa',
+    items: ['React', 'HTML', 'CSS'],
+  },
+  {
+    category: 'backend',
+    color: '#f59e0b',
+    items: ['Node.js', 'Express', 'REST APIs'],
+  },
+  {
+    category: 'databases',
+    color: '#f87171',
+    items: ['SQL', 'Supabase'],
+  },
 ];
+ 

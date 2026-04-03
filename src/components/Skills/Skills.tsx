@@ -1,43 +1,48 @@
 import {
   SkillsSection,
   Container,
-  Title,
+  SectionLabel,
+  PromptLine,
   SkillsGrid,
   SkillCard,
-  SkillIcon,
-  SkillTitle,
-  SkillList,
-  SkillItem
-} from './styled'
-
-import { skills } from './Components';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import { useScrollAnimationTitle } from '../../hooks/useScrollAnimationTitle';
-
-  const Skills = () => {
-    const { ref: titleRef, isVisible: titleVisible } = useScrollAnimationTitle();
-    const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
-
-    return (
-      <SkillsSection id="habilidades">
-        <Container>
-          <Title ref={titleRef} $isVisible={titleVisible}>Minhas Habilidades</Title>
-          <SkillsGrid ref={gridRef} $isVisible={gridVisible}>
-            {skills.map((skill, index) => (
-              <SkillCard key={index} $delay={index * 0.1}>
-                <SkillIcon>{skill.icon}</SkillIcon>
-                <SkillTitle>{skill.title}</SkillTitle>
-                <SkillList>
-                  {skill.items.map((item, itemIndex) => (
-                    <SkillItem key={itemIndex}>{item}</SkillItem>
-                  ))}
-                </SkillList>
-              </SkillCard>
-            ))}
-          </SkillsGrid>
-        </Container>
-      </SkillsSection>
-    );
-  }; 
-
+  CategoryLabel,
+  TagRow,
+  SkillTag,
+} from './styled';
+ 
+import { skillGroups } from './Components';
+ 
+const Skills = () => {
+  return (
+    <SkillsSection id="habilidades">
+      <Container>
+        <SectionLabel>02. skills</SectionLabel>
+ 
+        <PromptLine>
+          <span className="user">voce</span>
+          <span className="host">@portfolio ~$</span>
+          <span className="cmd">ls</span>
+          <span className="flag">--skills</span>
+          <span className="flag">--all</span>
+        </PromptLine>
+ 
+        <SkillsGrid>
+          {skillGroups.map((group, i) => (
+            <SkillCard key={group.category} $delay={i * 70}>
+              <CategoryLabel $color={group.color}>{group.category}</CategoryLabel>
+              <TagRow>
+                {group.items.map(skill => (
+                  <SkillTag key={skill} $color={group.color}>
+                    {skill}
+                  </SkillTag>
+                ))}
+              </TagRow>
+            </SkillCard>
+          ))}
+        </SkillsGrid>
+      </Container>
+    </SkillsSection>
+  );
+};
+ 
 export default Skills;

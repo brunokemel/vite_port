@@ -4,7 +4,7 @@ import { slideInFromTop, slideInFromBottom, scaleIn } from "../../styles/animati
 
 export const ContactSection = styled.section`
   padding: 6rem 2rem;
-  background-color: ${colors.background};
+  background-color: ${colors.bgColor};
 `;
 
 export const Container = styled.div`

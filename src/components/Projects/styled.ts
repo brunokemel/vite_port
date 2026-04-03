@@ -4,7 +4,7 @@ import { slideInFromBottom, slideInFromTop, scaleIn } from "../../styles/animati
 
 export const ProjectsSection = styled.section`
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, ${colors.primary}05 0%, ${colors.secondary}05 100%);
+  background-color: ${colors.bgColor};
 `;
 
 export const Container = styled.div`
