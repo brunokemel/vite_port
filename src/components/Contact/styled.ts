@@ -1,89 +1,150 @@
-import styled from "styled-components";
-import { colors } from "../../styles/theme";
-import { slideInFromTop, slideInFromBottom, scaleIn } from "../../styles/animations";
-
+import styled, { keyframes } from 'styled-components'
+ 
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+`
+ 
+/* ── Section ── */
 export const ContactSection = styled.section`
-  padding: 6rem 2rem;
-  background-color: ${colors.bgColor};
-`;
-
+  padding: 6rem 2rem 4rem;
+  background-color: #0d0d0d;
+`
+ 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-`;
-
-type TitleProps = {
-  $isVisible: boolean;
-};
-
-export const Title = styled.h2<TitleProps>`
-  font-size: 2.5rem;
-  color: ${colors.primary};
-  text-align: center;
-  margin-bottom: 3rem;
-  font-weight: 700;
-  animation: ${({ $isVisible }) => $isVisible ? slideInFromTop : 'none'} 0.8s ease-out forwards;
-  opacity: 0;
-`;
-
-type ContactGridProps = {
-  $isVisible: boolean;
-};
-
-export const ContactGrid = styled.div<ContactGridProps>`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-  animation: ${({ $isVisible }) => $isVisible ? slideInFromBottom : 'none'} 0.8s ease-out 0.2s forwards;
-  opacity: 0;
-`;
-
-type ContactCardProps = {
-  $delay: number;
-};
-
-export const ContactCard = styled.div<ContactCardProps>`
-  background: white;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 6px ${colors.success}15;
-  text-align: center;
-  transition: all 0.3s ease;
-  animation: ${scaleIn} 0.6s ease-out ${({ $delay }) => $delay}s forwards;
-  opacity: 0;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px ${colors.primary}25;
-  }
-`;
-
-export const ContactIcon = styled.div`
-  font-size: 2.5rem;
-  color: ${colors.accent};
+`
+ 
+/* ── Section label ── */
+export const SectionLabel = styled.p`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 1.5rem;
+`
+ 
+/* ── Prompt line ── */
+export const PromptLine = styled.div`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2rem;
+  color: #555;
+ 
+  .user { color: #4ade80; }
+  .cmd  { color: #e2e8f0; }
+  .flag { color: #60a5fa; }
+`
+ 
+/* ── Headline ── */
+export const Headline = styled.h2`
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: #e2e8f0;
+  line-height: 1.15;
   margin-bottom: 1rem;
-`;
-
-export const ContactTitle = styled.h3`
-  font-size: 1.25rem;
-  color: ${colors.accent};
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-`;
-
-export const ContactInfo = styled.p`
-  color: ${colors.accent};
-  font-size: 1.1rem;
-  line-height: 1.6;
-`;
-
-export const ContactLink = styled.a`
-  color: ${colors.accent};
+  opacity: 0;
+  animation: ${fadeUp} 0.45s ease forwards;
+  animation-delay: 100ms;
+ 
+  .green { color: #4ade80; }
+`
+ 
+/* ── Sub text ── */
+export const Sub = styled.p`
+  font-size: 13px;
+  color: #666;
+  max-width: 460px;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: ${fadeUp} 0.45s ease forwards;
+  animation-delay: 180ms;
+`
+ 
+/* ── CTA button ── */
+export const CtaButton = styled.a`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  padding: 8px 16px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: color 0.3s ease;
-
+  transition: background 0.15s;
+  opacity: 0;
+  animation: ${fadeUp} 0.45s ease forwards;
+  animation-delay: 260ms;
+ 
   &:hover {
-    color: ${colors.secondary};
+    background: rgba(74, 222, 128, 0.16);
   }
-`;
+`
+ 
+/* ── Links list ── */
+export const LinksList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: ${fadeUp} 0.45s ease forwards;
+  animation-delay: 340ms;
+`
+ 
+export const LinkRow = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #666;
+  text-decoration: none;
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #1e1e1e;
+  max-width: 420px;
+  transition: all 0.15s;
+ 
+  .icon  { color: #444; width: 18px; flex-shrink: 0; }
+  .label { color: #555; min-width: 70px; }
+  .value { color: #e2e8f0; flex: 1; }
+  .arrow { color: #333; font-size: 11px; transition: all 0.15s; margin-left: auto; }
+ 
+  &:hover {
+    border-color: rgba(74, 222, 128, 0.25);
+    background: rgba(74, 222, 128, 0.03);
+ 
+    .arrow { color: #4ade80; transform: translateX(3px); }
+    .value { color: #4ade80; }
+  }
+`
+ 
+/* ── Footer ── */
+export const Footer = styled.footer`
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+`
+ 
+export const FooterText = styled.p`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  color: #333;
+ 
+  .green { color: #4ade80; }
+`

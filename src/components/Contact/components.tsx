@@ -1,36 +1,34 @@
-import {
-  Email as EmailIcon,
-  LinkedIn as LinkedInIcon,
-  Instagram as InstagramIcon,
-} from '@mui/icons-material';
-import React from 'react';
-
-interface ContactInfo {
-  icon: React.ReactElement;
-  title: string;
-  info: string;
-  link: string;
-
+export interface ContactLink {
+  icon: string
+  label: string
+  value: string
+  href: string
 }
-
-export const contactInfo: ContactInfo[] = [
+ 
+export const contactLinks: ContactLink[] = [
   {
-    icon: <EmailIcon />,
-    title: 'Email: br.kemel@gmail.com',
-    info: 'br.kemel@gmail.com',
-    link: 'mailto:br.kemel@gmail.com?subject=Contato%20Profissional&body=Olá%20Bruno%2C%20gostaria%20de%20falar%20com%20você%20sobre...'
+    icon: '✉',
+    label: 'Email',
+    value: 'br.kemel@gmail.com',
+    href: 'mailto:br.kemel@gmail.com?subject=Contato%20Profissional&body=Olá%20Bruno%2C%20gostaria%20de%20falar%20com%20você%20sobre...',
   },
   {
-    icon: <LinkedInIcon />,
-    title: 'LinkedIn',
-    info: 'Acesse meu perfil',
-    link: 'https://www.linkedin.com/in/bruno-kemel/'
-  }
-  ,
+    icon: '⌥',
+    label: 'GitHub',
+    value: 'github.com/brunokemel',
+    href: 'https://github.com/brunokemel',
+  },
   {
-    icon: <InstagramIcon />,
-    title: 'Instagram',
-    info: '@kemel.js',
-    link: 'https://www.instagram.com/kemel.js/'
-  }
-]; 
+    icon: '↗',
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/bruno-kemel',
+    href: 'https://www.linkedin.com/in/bruno-kemel/',
+  },
+  {
+    icon: '◈',
+    label: 'Instagram',
+    value: '@kemel.js',
+    href: 'https://www.instagram.com/kemel.js/',
+  },
+]
+ 

@@ -1,44 +1,68 @@
-import { contactInfo } from './components'; // Import the contact info array
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
-import { useScrollAnimationTitle } from '../../hooks/useScrollAnimationTitle';
-
 import {
   ContactSection,
   Container,
-  Title,
-  ContactGrid,
-  ContactCard,
-  ContactIcon,
-  ContactTitle,
-  ContactInfo,
-  ContactLink
- } from './styled'
-
-
+  SectionLabel,
+  PromptLine,
+  Headline,
+  Sub,
+  CtaButton,
+  LinksList,
+  LinkRow,
+  Footer,
+  FooterText,
+} from './styled'
+ 
+import { contactLinks } from './components'
+ 
 const Contact = () => {
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimationTitle();
-  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
-
   return (
     <ContactSection id="contato">
       <Container>
-        <Title ref={titleRef} $isVisible={titleVisible}>Entre em Contato</Title>
-        <ContactGrid ref={gridRef} $isVisible={gridVisible}>
-          {contactInfo.map((contact, index) => (
-            <ContactCard key={index} $delay={index * 0.1}>
-              <ContactIcon>{contact.icon}</ContactIcon>
-              <ContactTitle>{contact.title}</ContactTitle>
-              <ContactInfo>
-                <ContactLink href={contact.link} target="_blank" rel="noopener noreferrer">
-                  {contact.info}
-                </ContactLink>
-              </ContactInfo>
-            </ContactCard>
+        <SectionLabel>04. contact</SectionLabel>
+ 
+        <PromptLine>
+          <span className="user">brunokemel</span>
+          <span>@portfolio ~$</span>
+          <span className="cmd">./send-message</span>
+          <span className="flag">--open</span>
+        </PromptLine>
+ 
+        <Headline>
+          Vamos construir<br />
+          <span className="green">algo juntos?</span>
+        </Headline>
+ 
+        <Sub>
+          Estou disponível para projetos freelance, oportunidades fulltime
+          e conversas sobre tecnologia. Respondo todos os contatos!
+        </Sub>
+ 
+        <CtaButton href="mailto:br.kemel@gmail.com?subject=Contato%20Profissional&body=Olá%20Bruno%2C%20gostaria%20de%20falar%20com%20você%20sobre...">
+          <span style={{ color: '#555' }}>$</span> enviar mensagem
+        </CtaButton>
+ 
+        <LinksList>
+          {contactLinks.map(link => (
+            <LinkRow key={link.label} href={link.href} target="_blank" rel="noopener">
+              <span className="icon">{link.icon}</span>
+              <span className="label">{link.label}</span>
+              <span className="value">{link.value}</span>
+              <span className="arrow">→</span>
+            </LinkRow>
           ))}
-        </ContactGrid>
+        </LinksList>
+ 
+        <Footer>
+          <FooterText>
+            Feito com <span className="green">♥</span> por Bruno Kemel · {new Date().getFullYear()}
+          </FooterText>
+          <FooterText>
+            <span className="green">~/portfolio</span> · React · TypeScript · Styled Components
+          </FooterText>
+        </Footer>
       </Container>
     </ContactSection>
-  );
-}; 
-
-export default Contact;
+  )
+}
+ 
+export default Contact
