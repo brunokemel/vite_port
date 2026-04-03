@@ -1,129 +1,173 @@
-import { colors } from "../../styles/theme"
-import styled from "styled-components";
-import { slideInFromBottom, slideInFromTop, scaleIn } from "../../styles/animations";
-
+import styled, { keyframes } from 'styled-components'
+ 
+const fadeUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+ 
+/* ── Section ── */
 export const ProjectsSection = styled.section`
   padding: 6rem 2rem;
-  background-color: ${colors.bgColor};
-`;
-
+  background-color: #0d0d0d;
+`
+ 
 export const Container = styled.div`
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-`;
-
-type TitleProps = {
-  $isVisible: boolean;
-};
-
-export const Title = styled.h2<TitleProps>`
-  font-size: 2.5rem;
-  color: ${colors.text};
-  text-align: center;
-  margin-bottom: 3rem;
-  font-weight: 700;
-  animation: ${({ $isVisible }) => $isVisible ? slideInFromTop : 'none'} 0.8s ease-out forwards;
-  opacity: 0;
-`;
-
-type ProjectsGridProps = {
-  $isVisible: boolean;
-};
-
-export const ProjectsGrid = styled.div<ProjectsGridProps>`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-  animation: ${({ $isVisible }) => $isVisible ? slideInFromBottom : 'none'} 0.8s ease-out 0.2s forwards;
-  opacity: 0;
-`;
-
-type ProjectCardProps = {
-  $delay: number;
-};
-
-export const ProjectCard = styled.div<ProjectCardProps>`
-  background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 6px ${colors.background}15;
-  transition: all 0.3s ease;
-  animation: ${scaleIn} 0.6s ease-out ${({ $delay }) => $delay}s forwards;
-  opacity: 0;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px ${colors.primary}25;
-  }
-`;
-
-export const ProjectImage = styled.div`
-  width: 100%;
-  height: 200px;
-  background-color: ${colors.primary}15;
+`
+ 
+/* ── Section label ── */
+export const SectionLabel = styled.p`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #555;
+  margin-bottom: 1.5rem;
+`
+ 
+/* ── Prompt line ── */
+export const PromptLine = styled.div`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 13px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: ${colors.primary};
-  font-size: 3rem;
-
-   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  gap: 8px;
+  margin-bottom: 2rem;
+ 
+  .user { color: #4ade80; }
+  .host { color: #555; }
+  .cmd  { color: #e2e8f0; }
+  .flag { color: #60a5fa; }
+`
+ 
+/* ── Grid: 2 cols, destaque ocupa full width ── */
+export const ProjectsGrid = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+ 
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
   }
-`;
-
-export const ProjectContent = styled.div`
-  padding: 1.5rem;
-`;
-
-export const ProjectTitle = styled.h3`
-  font-size: 1.5rem;
-  color: ${colors.accent};
-  margin-bottom: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-style: italic;
-`;
-
-export const ProjectDescription = styled.p`
-  color: ${colors.background};
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
-`;
-
-export const ProjectTags = styled.div`
+`
+ 
+/* ── Card ── */
+export const ProjectCard = styled.div<{ $highlight?: boolean; $delay?: number }>`
+  background: #111;
+  border: 1px solid ${({ $highlight }) => $highlight ? 'rgba(74,222,128,0.2)' : '#1e1e1e'};
+  background: ${({ $highlight }) => $highlight ? 'rgba(74,222,128,0.03)' : '#111'};
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0;
+  animation: ${fadeUp} 0.45s ease forwards;
+  animation-delay: ${({ $delay = 0 }) => $delay}ms;
+  transition: border-color 0.2s, background 0.2s;
+ 
+  ${({ $highlight }) => $highlight && `
+    grid-column: span 2;
+    @media (max-width: 640px) { grid-column: span 1; }
+  `}
+ 
+  &:hover {
+    background: #161616;
+    border-color: ${({ $highlight }) => $highlight ? 'rgba(74,222,128,0.4)' : '#2a2a2a'};
+  }
+`
+ 
+/* ── Header: num + nome + badge ── */
+export const ProjectHeader = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+`
+ 
+export const ProjectNum = styled.span`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  color: #444;
+`
+ 
+export const ProjectName = styled.h3`
+  font-size: 15px;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 2px 0 0;
+  letter-spacing: -0.2px;
+`
+ 
+export const HighlightBadge = styled.span`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 10px;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  color: #4ade80;
+  padding: 2px 8px;
+  border-radius: 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+`
+ 
+/* ── Description ── */
+export const ProjectDesc = styled.p`
+  font-size: 12px;
+  color: #666;
+  line-height: 1.7;
+  flex: 1;
+`
+ 
+/* ── Tags ── */
+export const TagRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-`;
-
+  gap: 6px;
+`
+ 
 export const Tag = styled.span`
-  background-color: ${colors.primary}15;
-  color: ${colors.accent};
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.9rem;
-`;
-
-export const ProjectLinks = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
-export const ProjectLink = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: ${colors.background};
-  font-weight: 500;
-  transition: color 0.3s ease;
-
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  color: #60a5fa;
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  padding: 3px 9px;
+  border-radius: 4px;
+  transition: background 0.15s;
+ 
   &:hover {
-    color: ${colors.accent};
-    transform: translateY(-5px);
+    background: rgba(96, 165, 250, 0.15);
   }
-`;
+`
+ 
+/* ── Links ── */
+export const Links = styled.div`
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #1e1e1e;
+`
+ 
+export const IconLink = styled.a`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  color: #444;
+  font-size: 11px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.15s;
+ 
+  &:hover {
+    color: #4ade80;
+  }
+`

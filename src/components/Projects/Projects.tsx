@@ -1,74 +1,80 @@
-import { projects } from './Components'
-import { useScrollAnimation } from '../../hooks/useScrollAnimation'
-import { useScrollAnimationTitle } from '../../hooks/useScrollAnimationTitle'
-
-import { 
-  GitHub as GitHubIcon,
-  Launch as LaunchIcon
-} from '@mui/icons-material';
-
-import { 
+import {
   ProjectsSection,
   Container,
-  Title,
+  SectionLabel,
+  PromptLine,
   ProjectsGrid,
   ProjectCard,
-  ProjectImage,
-  ProjectContent,
-  ProjectTitle,
-  ProjectDescription,
-  ProjectTags,
+  ProjectHeader,
+  ProjectNum,
+  ProjectName,
+  HighlightBadge,
+  ProjectDesc,
+  TagRow,
   Tag,
-  ProjectLinks,
-  ProjectLink
- } from "./styled"
-
-
+  Links,
+  IconLink,
+} from './styled'
+ 
+import { projects } from './Components'
+ 
 const Projects = () => {
-  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimationTitle();
-  const { ref: gridRef, isVisible: gridVisible } = useScrollAnimation();
-
   return (
     <ProjectsSection id="projetos">
       <Container>
-        <Title ref={titleRef} $isVisible={titleVisible}>Meus Projetos</Title>
-        <ProjectsGrid ref={gridRef} $isVisible={gridVisible}>
-          {projects.map((project, index) => (
-            <ProjectCard key={project.id} $delay={index * 0.1}>
-              {project.img ? (
-                <ProjectImage>
-                  <img src={project.img} alt={project.title} style={{ width: "100%" }} />
-                </ProjectImage>
-              ) : (
-                <ProjectImage>
-                  <span>{project.title}</span>
-                </ProjectImage>
-              )}
-              <ProjectContent>
-                <ProjectTitle>{project.title}</ProjectTitle>
-                <ProjectDescription>{project.description}</ProjectDescription>
-                <ProjectTags>
-                  {project.tags.map((tag, tagIndex) => (
-                    <Tag key={tagIndex}>{tag}</Tag>
-                  ))}
-                </ProjectTags>
-                <ProjectLinks>
-                  <ProjectLink href={project.github} target="_blank" rel="noopener noreferrer">
-                    <GitHubIcon />
-                    Código
-                  </ProjectLink>
-                  <ProjectLink href={project.demo} target="_blank" rel="noopener noreferrer">
-                    <LaunchIcon />
-                    Demo
-                  </ProjectLink>
-                </ProjectLinks>
-              </ProjectContent>
+        <SectionLabel>03. projects</SectionLabel>
+ 
+        <PromptLine>
+          <span className="user">voce</span>
+          <span className="host">@portfolio ~$</span>
+          <span className="cmd">git</span>
+          <span className="flag">log</span>
+          <span className="flag">--featured</span>
+        </PromptLine>
+ 
+        <ProjectsGrid>
+          {projects.map((project, i) => (
+            <ProjectCard
+              key={project.num}
+              $highlight={project.highlight}
+              $delay={i * 80}
+            >
+              <ProjectHeader>
+                <div>
+                  <ProjectNum>./projects/{project.num}</ProjectNum>
+                  <ProjectName>{project.name}</ProjectName>
+                </div>
+                {project.highlight && (
+                  <HighlightBadge>★ destaque</HighlightBadge>
+                )}
+              </ProjectHeader>
+ 
+              <ProjectDesc>{project.description}</ProjectDesc>
+ 
+              <TagRow>
+                {project.stack.map(tech => (
+                  <Tag key={tech}>{tech}</Tag>
+                ))}
+              </TagRow>
+ 
+              <Links>
+                {project.github && (
+                  <IconLink href={project.github} target="_blank" rel="noopener">
+                    ⌥ github
+                  </IconLink>
+                )}
+                {project.demo && (
+                  <IconLink href={project.demo} target="_blank" rel="noopener">
+                    ↗ live demo
+                  </IconLink>
+                )}
+              </Links>
             </ProjectCard>
           ))}
         </ProjectsGrid>
       </Container>
     </ProjectsSection>
-  );
-}; 
-
-export default Projects;
+  )
+}
+ 
+export default Projects
