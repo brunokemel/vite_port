@@ -8,7 +8,10 @@ import {
   MenuButton,
   NavLinks,
   CloseButton,
-  NavLink
+  NavLink,
+  Dots,
+  Dot,
+  Title
 } from './styled'
 
 
@@ -38,8 +41,14 @@ const navLinks = [
   return (
     <Nav isScrolled={isScrolled}>
       <NavContainer>
+        <Dots>
+          <Dot color="#ff5f57" />
+          <Dot color="#febc2e" />
+          <Dot color="#28c840" />
+        </Dots>
         <Logo href="https://github.com/brunokemel">
-          BK<span>devolper</span>
+          <span>~/bruno-kemel</span> 
+          <Title>/ — portifolio</Title>
           </Logo>
         
         <MenuButton onClick={toggleMenu} aria-label="Abrir menu">

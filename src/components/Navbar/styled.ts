@@ -15,6 +15,20 @@ export const Nav = styled.nav<{ isScrolled: boolean }>`
     isScrolled ? `0 2px 4px ${colors.accent}15` : 'none'};
   transition: all 0.3s ease;
 `;
+export const  Dots = styled.div`
+  display: flex;
+  gap: 7px;
+  margin-right: -33rem;
+  align-items: center;
+`;
+
+export const Dot = styled.span<{ color: string }>`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: ${({ color }) => color};
+  display: flex;
+`;
 
 export const NavContainer = styled.div`
   max-width: 1200px;
@@ -25,21 +39,18 @@ export const NavContainer = styled.div`
 `;
 
 export const Logo = styled.a`
-  font-size: 3rem;
-  font-weight: 900;
-  color: ${colors.logoColor};
-  font-family: "Saira", sans-serif;
+  font-family: "DM Mono", monospace;
   text-decoration: none;
-
-  span {
-    color: ${colors.spanColor}; 
-    font-weight: 600;
-  }
+  color: ${colors.spanColor};
 
  @media (max-width: ${breakpoints.tablet}) {
-    font-size: 1rem; 
+    font-size: 0%.5rem; 
   }
 `;
+export const Title = styled.a`
+  font-family: "DM Mono", monospace;
+  text-decoration: none;
+  color: ${colors.secondary};`;
 
 export const NavLinks = styled.div<{ isOpen: boolean }>`
   display: flex;
