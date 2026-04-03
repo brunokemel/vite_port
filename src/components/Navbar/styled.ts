@@ -10,9 +10,9 @@ export const Nav = styled.nav<{ isScrolled: boolean }>`
   z-index: 1000;
   padding: 1rem 2rem;
   background-color: ${({ isScrolled }) => 
-    isScrolled ? colors.secondary : 'transparent'};
+    isScrolled ? colors.newHeaderColor : 'transparent'};
   box-shadow: ${({ isScrolled }) => 
-    isScrolled ? `0 2px 4px ${colors.accent}15` : 'none'};
+    isScrolled ? `0 2px 4px ${colors.newHeaderColor}15` : 'none'};
   transition: all 0.3s ease;
 `;
 export const  Dots = styled.div`
@@ -76,9 +76,11 @@ export const NavLink = styled.a`
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
 
   &:hover {
-    color: ${colors.accent};
+    color: ${colors.blue};
   }
 `;
 

@@ -12,6 +12,8 @@ export type Colors = {
   backgroundHeader: string;
   spanColor?: string;
   logoColor?: string;
+  newHeaderColor?: string;
+  blue?: string;
 };
 
 export const colors: Colors= {
@@ -26,7 +28,9 @@ export const colors: Colors= {
   success: '#00E676',          // Verde vibrante
   backgroundHeader: 'linear-gradient(90deg, #e11d48 0%, #7e1e3b 50%, #1a1a1a 75%, #121212 100%)',
   spanColor: '#00ff88',        // Verde neon para detalhes
-  logoColor: '#ffffff',        // Branco puro para o logo
+  logoColor: '#ffffff',       // Branco puro para o logo
+  newHeaderColor: '#1e1e2e', // Gradiente para o novo header
+  blue: '#30304d',            // Azul vibrante para links e destaques
 
     
 }
