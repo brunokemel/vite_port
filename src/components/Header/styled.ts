@@ -1,227 +1,161 @@
-import { colors, breakpoints } from "../../styles/theme"
-import styled, { keyframes } from "styled-components";
-import type { SocialLinkProps } from "../../styles/animations";
-
-
-
-const slideInFromLeft = keyframes`
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-`;
-
-
-const slideInFromBottom = keyframes`
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-
-const slideInFromTop = keyframes`
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-`;
-
-
-type HeaderContainerProps = {
-  $isDesktop: boolean;
-};
-
-type AnimatedElementProps = {
-  $isVisible: boolean;
-};
-
-export const HeaderContainer = styled.header<HeaderContainerProps>`
+import styled, { keyframes } from 'styled-components'
+ 
+const fadeUp = keyframes`
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+`
+ 
+const blink = keyframes`
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+`
+ 
+/* ── Page ── */
+export const HeaderContainer = styled.header`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
+  padding: 0 2rem;
+  background-color: #0d0d0d;
   position: relative;
   overflow: hidden;
-  background-color: ${colors.bgColor};
-`;
+`
+ 
+export const Container = styled.div`
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+`
 
-
-export const Content = styled.div`
-  position: relative;
-  z-index: 1;
-  max-width: 800px;
+ 
+/* ── Prompt line ── */
+export const PromptLine = styled.div`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  color: #555;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 2rem;
-`;
-
-export const ProfileSection = styled.div<AnimatedElementProps>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  animation: ${({ $isVisible }) => $isVisible ? slideInFromTop : 'none'} 0.8s ease-out forwards;
+  gap: 8px;
+  margin-bottom: 1.5rem;
   opacity: 0;
-`;
-
-export const ProfileImage = styled.img`
-  width: 150px;
-  height: 150px;
+  animation: ${fadeUp} 0.4s ease forwards;
+  animation-delay: 100ms;
+ 
+  .user { color: #4ade80; }
+  .cmd  { color: #e2e8f0; }
+  .flag { color: #60a5fa; }
+`
+ 
+/* ── Output block ── */
+export const OutputBlock = styled.div`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 13px;
+  color: #666;
+  line-height: 2;
+  opacity: 0;
+  animation: ${fadeUp} 0.4s ease forwards;
+  animation-delay: 200ms;
+`
+ 
+export const Line = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-bottom: 2px;
+ 
+  .key   { color: #444; min-width: 100px; flex-shrink: 0; }
+  .val   { color: #e2e8f0; }
+  .green { color: #4ade80; }
+  .amber { color: #f59e0b; }
+  .blue  { color: #60a5fa; }
+`
+ 
+export const Divider = styled.div`
+  height: 1px;
+  background: #1e1e1e;
+  margin: 1.25rem 0;
+`
+ 
+/* ── Avatar ── */
+export const Avatar = styled.img`
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  border: 4px solid ${colors.primary};
-  box-shadow: 0 8px 16px ${colors.primary}25;
-  transition: all 0.3s ease;
-  
-  
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px ${colors.primary}35;
-  }
-
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 75px;
-    height: 75px;
-    margin-top: 40px;
-  }
-`;
-
-export const TextSection = styled.div<AnimatedElementProps>`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  text-align: center;
-  animation: ${({ $isVisible }) => $isVisible ? slideInFromBottom : 'none'} 0.8s ease-out 0.2s forwards;
+  border: 2px solid #1e1e1e;
+  margin-bottom: 1.5rem;
   opacity: 0;
-`;
-
-export const ActionsSection = styled.div<AnimatedElementProps>`
+  animation: ${fadeUp} 0.4s ease forwards;
+  animation-delay: 50ms;
+`
+ 
+/* ── Social links ── */
+export const SocialRow = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  animation: ${({ $isVisible }) => $isVisible ? slideInFromLeft : 'none'} 0.8s ease-out 0.4s forwards;
+  gap: 16px;
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid #1e1e1e;
   opacity: 0;
-`;
-
-export const Title = styled.h1`
-  font-size: 3.5rem;
-  color: ${colors.primary};
-  margin-bottom: 0;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  font-family: "DM Mono", monospace;
-
-  @media (max-width: ${breakpoints.mobile}) {
-    font-size: 2.5rem;
-  }
-`;
-
-export const Subtitle = styled.h2`
-  font-size: 1.50rem;
-  color: ${colors.textLight};
-  font-weight: 200;
-  margin-bottom: 0;
-  line-height: 1.4;
-  font-family: "DM Mono", monospace;
-
-
-  @media (max-width: ${breakpoints.mobile}) {
-    font-size: 1.25rem;
-  }
-`;
-
-export const SocialLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0;
-`;
-
-export const bounce = keyframes`
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-`;
-
-
-
-export const SocialLink = styled.a<SocialLinkProps>`
-  color: ${colors.primary};
-  font-size: 2.8rem;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
-  border-radius: 50%;
-  animation: bounce 7s infinite;
-  animation-delay: ${({ $delay }) => $delay || '0s'};
-
-  &:hover {
-    color: ${colors.accent};
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px ${colors.success}25;
-  }
-    
-`;
-
-export const DownloadButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  background-color: ${colors.accent};
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 2rem;
+  animation: ${fadeUp} 0.4s ease forwards;
+  animation-delay: 350ms;
+`
+ 
+export const SocialLink = styled.a`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  color: #444;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px ${colors.accent}25;
-
-  &:hover {
-    background-color: ${colors.secondary};
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px ${colors.accent}35;
-    color : ${colors.accent};
-  }
-`;
-
-export const ScrollIndicator = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.15s;
+ 
+  &:hover { color: #4ade80; }
+`
+ 
+export const CvButton = styled.a`
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  padding: 3px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  transition: background 0.15s;
+ 
+  &:hover { background: rgba(74, 222, 128, 0.16); }
+`
+ 
+/* ── Cursor blink ── */
+export const Cursor = styled.span`
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: #4ade80;
+  margin-left: 4px;
+  vertical-align: middle;
+  animation: ${blink} 1.1s step-start infinite;
+`
+ 
+/* ── Scroll hint ── */
+export const ScrollHint = styled.div`
   position: absolute;
   bottom: 2rem;
-  left: 47%;
+  left: 50%;
   transform: translateX(-50%);
+  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  color: ${colors.textLight};
-  font-size: 0.9rem;
-  animation: bounce 2s infinite;
-
-  @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
-    }
-    40% {
-      transform: translateY(-10px);
-    }
-    60% {
-      transform: translateY(-5px);
-    }
-  }
-`;
+  gap: 4px;
+  opacity: 0;
+  animation: ${fadeUp} 0.4s ease forwards;
+  animation-delay: 600ms;
+`
