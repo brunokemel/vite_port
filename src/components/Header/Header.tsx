@@ -60,7 +60,7 @@ const Header = () => {
           </Line>
           <Line>
             <span className="key">status:</span>
-            <span className="green">"Disponível"</span>
+            <span className="green">"Dev Digital Point"</span>
           </Line>
  
           <Divider />
