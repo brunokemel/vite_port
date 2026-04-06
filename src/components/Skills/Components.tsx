@@ -18,7 +18,7 @@ export const skillGroups: SkillGroup[] = [
   {
     category: 'backend',
     color: '#f59e0b',
-    items: ['Node.js', 'Express', 'REST APIs'],
+    items: ['Node.js', 'Express', 'REST APIs','Selenium automation '],
   },
   {
     category: 'databases',
