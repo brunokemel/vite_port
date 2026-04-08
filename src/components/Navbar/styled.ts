@@ -64,7 +64,9 @@ export const NavLinks = styled.div<{ isOpen: boolean }>`
     bottom: 0;
     width: 50%;
     max-width: 300px;
-    background-color: ${colors.accent}  ;
+    background-color: rgba(48, 48, 77, 0.7);
+    backdrop-filter: blur(8px);         
+    -webkit-backdrop-filter: blur(8px);
     flex-direction: column;
     padding: 5rem 2rem;
     transition: right 0.3s ease;
