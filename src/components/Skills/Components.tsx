@@ -13,7 +13,7 @@ export const skillGroups: SkillGroup[] = [
   {
     category: 'frontend',
     color: '#60a5fa',
-    items: ['React', 'HTML', 'CSS'],
+    items: ['React', 'Next.js', 'Tailwind CSS', 'Material-UI'],
   },
   {
     category: 'backend',
@@ -23,7 +23,7 @@ export const skillGroups: SkillGroup[] = [
   {
     category: 'databases',
     color: '#f87171',
-    items: ['SQL', 'Supabase'],
+    items: ['SQL', 'Supabase', 'PostgreSQL'],
   },
 ];
  
