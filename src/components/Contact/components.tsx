@@ -13,6 +13,12 @@ export const contactLinks: ContactLink[] = [
     href: 'mailto:br.kemel@gmail.com?subject=Contato%20Profissional&body=Olá%20Bruno%2C%20gostaria%20de%20falar%20com%20você%20sobre...',
   },
   {
+    icon: '☏',
+    label: 'WhatsApp',
+    value: '(91) 98514-4465',
+    href: 'https://wa.me/5591985144465',
+  },
+  {
     icon: '⌥',
     label: 'GitHub',
     value: 'github.com/brunokemel',
