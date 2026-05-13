@@ -38,11 +38,11 @@ export const projects: Project[] = [
   },
   {
     num: '04',
-    name: 'E-commerce Backend',
+    name: 'Robô figurinhas whatsapp',
     description:
-      'Backend para e-commerce com TypeScript e Supabase, incluindo autenticação, gerenciamento de produtos e processamento de pedidos.',
-    stack: ['TypeScript', 'Supabase', 'Express', 'Docker', 'PLpgSQL'],
-    github: 'https://github.com/brunokemel/e-commerce-backend',
+      'Robô para WhatsApp que gera figurinhas a partir de imagens enviadas, utilizando TypeScript',
+    stack: ['Node.js', 'TypeScript', 'Baileys', 'Sharp', 'FFmpeg'],
+    github: 'https://github.com/brunokemel/boot_figurinha_kemel',
   },
   {
     num: '05',
