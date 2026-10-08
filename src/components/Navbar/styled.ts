@@ -2,32 +2,47 @@ import { colors, breakpoints } from "../../styles/theme"
 import styled from "styled-components";
 
 
-export const Nav = styled.nav<{ isScrolled: boolean }>`
+export const Nav = styled.nav<{ $isScrolled: boolean }>`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   padding: 1rem 2rem;
-  background-color: ${({ isScrolled }) => 
-    isScrolled ? colors.newHeaderColor : 'transparent'};
-  box-shadow: ${({ isScrolled }) => 
-    isScrolled ? `0 2px 4px ${colors.newHeaderColor}15` : 'none'};
+  background-color: ${({ $isScrolled }) =>
+    $isScrolled ? colors.newHeaderColor : 'transparent'};
+  box-shadow: ${({ $isScrolled }) =>
+    $isScrolled ? `0 2px 4px ${colors.newHeaderColor}15` : 'none'};
   transition: all 0.3s ease;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 0.75rem 1rem;
+  }
 `;
+
+export const BrandGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 0;
+`;
+
 export const  Dots = styled.div`
   display: flex;
   gap: 7px;
-  margin-right: -38rem;
   align-items: center;
+
+  @media (max-width: 420px) {
+    display: none;
+  }
 `;
 
-export const Dot = styled.span<{ color: string }>`
+export const Dot = styled.span<{ $color: string }>`
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: ${({ color }) => color};
-  display: flex;
+  background: ${({ $color }) => $color};
+  display: block;
 `;
 
 export const NavContainer = styled.div`
@@ -43,16 +58,18 @@ export const Logo = styled.a`
   text-decoration: none;
   color: ${colors.spanColor};
 
- @media (max-width: ${breakpoints.tablet}) {
-    font-size: 0%.5rem; 
+  white-space: nowrap;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 0.85rem;
   }
 `;
-export const Title = styled.a`
+export const Title = styled.span`
   font-family: "DM Mono", monospace;
   text-decoration: none;
   color: ${colors.secondary};`;
 
-export const NavLinks = styled.div<{ isOpen: boolean }>`
+export const NavLinks = styled.div<{ $isOpen: boolean }>`
   display: flex;
   gap: 2rem;
   align-items: center;
@@ -60,7 +77,9 @@ export const NavLinks = styled.div<{ isOpen: boolean }>`
   @media (max-width: ${breakpoints.tablet}) {
     position: fixed;
     top: 0;
-    right: ${({ isOpen }) => (isOpen ? '0' : '-100%')};
+    right: ${({ $isOpen }) => ($isOpen ? '0' : '-100%')};
+    visibility: ${({ $isOpen }) => ($isOpen ? 'visible' : 'hidden')};
+    pointer-events: ${({ $isOpen }) => ($isOpen ? 'auto' : 'none')};
     bottom: 0;
     width: 50%;
     max-width: 300px;
@@ -69,7 +88,12 @@ export const NavLinks = styled.div<{ isOpen: boolean }>`
     -webkit-backdrop-filter: blur(8px);
     flex-direction: column;
     padding: 5rem 2rem;
-    transition: right 0.3s ease;
+    transition: right 0.3s ease, visibility 0.3s ease;
+    box-shadow: -12px 0 30px rgba(0, 0, 0, 0.35);
+
+    @media (max-width: 480px) {
+      width: min(85%, 300px);
+    }
   }
 `;
 

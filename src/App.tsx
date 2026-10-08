@@ -22,10 +22,12 @@ function App() {
         <GlobalStyle />
         <AppContainer>
           <Navbar />
-          <Header />
-          <Skills />
-          <Projects />
-          <Contact />
+          <main>
+            <Header />
+            <Skills />
+            <Projects />
+            <Contact />
+          </main>
         </AppContainer>
       </>
     </ThemeProvider>

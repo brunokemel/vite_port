@@ -40,6 +40,7 @@ export const PromptLine = styled.div`
   align-items: center;
   gap: 8px;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
  
   .user { color: #4ade80; }
   .host { color: #555; }

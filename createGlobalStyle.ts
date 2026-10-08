@@ -10,6 +10,12 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #121212;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   a {
@@ -19,5 +25,24 @@ export const GlobalStyle = createGlobalStyle`
 
   ul {
     list-style: none;
+  }
+
+  a, button {
+    &:focus-visible {
+      outline: 2px solid #4ade80;
+      outline-offset: 4px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 `;

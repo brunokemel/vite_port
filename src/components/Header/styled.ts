@@ -41,6 +41,7 @@ export const PromptLine = styled.div`
   opacity: 0;
   animation: ${fadeUp} 0.4s ease forwards;
   animation-delay: 100ms;
+  flex-wrap: wrap;
  
   .user { color: #4ade80; }
   .cmd  { color: #e2e8f0; }
@@ -62,6 +63,7 @@ export const Line = styled.div`
   display: flex;
   gap: 12px;
   margin-bottom: 2px;
+  overflow-wrap: anywhere;
  
   .key   { color: #444; min-width: 100px; flex-shrink: 0; }
   .val   { color: #e2e8f0; }
@@ -98,6 +100,11 @@ export const SocialRow = styled.div`
   opacity: 0;
   animation: ${fadeUp} 0.4s ease forwards;
   animation-delay: 350ms;
+  flex-wrap: wrap;
+
+  @media (max-width: 520px) {
+    gap: 12px;
+  }
 `
  
 export const SocialLink = styled.a`
@@ -129,6 +136,10 @@ export const CvButton = styled.a`
   transition: background 0.15s;
  
   &:hover { background: rgba(74, 222, 128, 0.16); }
+
+  @media (max-width: 520px) {
+    margin-left: 0;
+  }
 `
  
 /* ── Cursor blink ── */

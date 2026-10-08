@@ -35,6 +35,7 @@ export const PromptLine = styled.div`
   gap: 8px;
   margin-bottom: 2rem;
   color: #555;
+  flex-wrap: wrap;
  
   .user { color: #4ade80; }
   .cmd  { color: #e2e8f0; }
@@ -114,10 +115,11 @@ export const LinkRow = styled.a`
   border: 1px solid #1e1e1e;
   max-width: 420px;
   transition: all 0.15s;
+  min-width: 0;
  
   .icon  { color: #444; width: 18px; flex-shrink: 0; }
   .label { color: #555; min-width: 70px; }
-  .value { color: #e2e8f0; flex: 1; }
+  .value { color: #e2e8f0; flex: 1; min-width: 0; overflow-wrap: anywhere; }
   .arrow { color: #333; font-size: 11px; transition: all 0.15s; margin-left: auto; }
  
   &:hover {
@@ -126,6 +128,14 @@ export const LinkRow = styled.a`
  
     .arrow { color: #4ade80; transform: translateX(3px); }
     .value { color: #4ade80; }
+  }
+
+  @media (max-width: 420px) {
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .label { min-width: 0; }
+    .value { flex-basis: calc(100% - 42px); }
   }
 `
  
