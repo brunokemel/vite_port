@@ -16,7 +16,7 @@ export const HeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 7rem 2rem 5rem;
   background-color: #0d0d0d;
   position: relative;
   overflow: hidden;
@@ -37,12 +37,13 @@ export const PromptLine = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #292929;
   opacity: 0;
   animation: ${fadeUp} 0.4s ease forwards;
   animation-delay: 100ms;
   flex-wrap: wrap;
- 
+
   .user { color: #4ade80; }
   .cmd  { color: #e2e8f0; }
   .flag { color: #60a5fa; }
@@ -57,6 +58,7 @@ export const OutputBlock = styled.div`
   opacity: 0;
   animation: ${fadeUp} 0.4s ease forwards;
   animation-delay: 200ms;
+  padding-top: 1rem;
 `
  
 export const Line = styled.div`
@@ -70,6 +72,14 @@ export const Line = styled.div`
   .green { color: #4ade80; }
   .amber { color: #f59e0b; }
   .blue  { color: #60a5fa; }
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 10px;
+
+    .key { min-width: 0; }
+  }
 `
  
 export const Divider = styled.div`
@@ -77,11 +87,13 @@ export const Divider = styled.div`
   background: #1e1e1e;
   margin: 1.25rem 0;
 `
- 
+
 /* ── Avatar ── */
 export const Avatar = styled.img`
   width: 64px;
   height: 64px;
+  display: block;
+  object-fit: cover;
   border-radius: 50%;
   border: 2px solid #1e1e1e;
   margin-bottom: 1.5rem;

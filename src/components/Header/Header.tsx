@@ -17,21 +17,14 @@ const Header = () => {
   return (
     <HeaderContainer id="inicio">
       <Container>
- 
-        {/* Decorative window dots */}
-        {/* <WindowBar>
-          <Dot $color="#f87171" />
-          <Dot $color="#f59e0b" />
-          <Dot $color="#4ade80" />
-        </WindowBar>
-  */}
-        {/* Avatar */}
         <Avatar
           src="https://github.com/brunokemel.png"
           alt="Bruno Kemel"
-          onError={(e) => { e.currentTarget.src = 'https://via.placeholder.com/64/1e1e1e/4ade80?text=BK' }}
+          onError={(e) => {
+            e.currentTarget.src = 'https://via.placeholder.com/64/1e1e1e/4ade80?text=BK'
+          }}
         />
- 
+
         {/* Prompt */}
         <PromptLine>
           <span className="user">brunokemel</span>
@@ -48,26 +41,23 @@ const Header = () => {
           </Line>
           <Line>
             <span className="key">role:</span>
-            <span className="val">"Backend Dev"</span>
+            <span className="val">"Backend Developer | RPA"</span>
           </Line>
           <Line>
             <span className="key">location:</span>
-            <span className="val">"Brasil 🇧🇷"</span>
+            <span className="val">"Belém, Pará — Brasil"</span>
           </Line>
           <Line>
             <span className="key">focus:</span>
-            <span className="amber">"APIs · Microsserviços · DB"</span>
+            <span className="amber">"APIs · Automação · Integrações"</span>
           </Line>
           <Line>
-            <span className="key">status:</span>
-            <span className="green">"Dev Digital Point"</span>
+            <span className="key">company:</span>
+            <span className="green">"Digital Point"</span>
           </Line>
- 
-          <Divider />
- 
           <Line>
-            <span className="key">stack:</span>
-            <span className="blue">["TypeScript", "Python", "Node.js"]</span>
+            <span className="key">experience:</span>
+            <span className="val">"Backend · RPA · Full Stack"</span>
           </Line>
           <Line>
             <span className="key">education:</span>
@@ -77,9 +67,23 @@ const Header = () => {
           <Divider />
  
           <Line>
+            <span className="key">stack:</span>
+            <span className="blue">["Python", "TypeScript", "Node.js", "FastAPI", "PostgreSQL", "Vue", "React"]</span>
+          </Line>
+
+          <Divider />
+
+          <Line>
+            <span className="key">specialties:</span>
+            <span className="amber">["REST APIs", "RPA", "Selenium", "Prisma"]</span>
+          </Line>
+ 
+          <Divider />
+ 
+          <Line>
             <span className="key">bio:</span>
             <span className="val">
-              "Apaixonado por construir soluções que escalam."
+              "Transformo processos complexos em soluções eficientes, conectando sistemas, dados e automações."
               <Cursor />
             </span>
           </Line>
