@@ -1,146 +1,101 @@
-# Portfólio Pessoal - Bruno Kemel
+# Portfólio — Bruno Kemel
 
-Este é um portfólio pessoal moderno e responsivo construído com React, TypeScript, Vite e Styled Components. O projeto apresenta uma interface elegante com animações interativas e design responsivo.
+Portfólio pessoal desenvolvido com React e TypeScript. A interface utiliza uma identidade visual inspirada em terminal para apresentar minhas habilidades, projetos, currículo e formas de contato.
 
-## 🚀 Tecnologias
+## Tecnologias
 
-### Frontend
-- **React 19.1.0** - Biblioteca principal
-- **TypeScript 5.8.3** - Tipagem estática
-- **Vite 6.3.5** - Build tool e dev server
-- **Styled Components 6.1.18** - CSS-in-JS
-- **Material UI 7.1.1** - Componentes e ícones
-- **React Icons 5.5.0** - Biblioteca de ícones
+- React 19
+- TypeScript
+- Vite
+- Styled Components
+- Material UI Icons
+- ESLint
 
-### Ferramentas de Desenvolvimento
-- **ESLint** - Linting de código
-- **TypeScript ESLint** - Linting específico para TypeScript
-- **Emotion** - CSS-in-JS engine
+## Funcionalidades
 
-## 📦 Instalação
+- Apresentação profissional com links para GitHub, LinkedIn, e-mail e currículo
+- Navegação por âncoras entre as seções da página
+- Menu responsivo para desktop, tablet e dispositivos móveis
+- Cards de habilidades separados por categoria
+- Projetos com descrição, tecnologias, repositório e demonstração, quando disponível
+- Contato direto por e-mail, WhatsApp e redes sociais
+- Animações e transições com suporte à preferência de redução de movimento
+- Navegação por teclado, indicadores de foco e atributos de acessibilidade no menu
 
-1. Clone o repositório
+## Como executar
+
+### Pré-requisitos
+
+- Node.js 18 ou superior
+- npm
+
+### Instalação
+
 ```bash
-git clone [url-do-repositorio]
-```
-
-2. Instale as dependências
-```bash
+git clone https://github.com/brunokemel/vite_port.git
+cd vite_port
 npm install
-```
-
-3. Inicie o servidor de desenvolvimento
-```bash
 npm run dev
 ```
 
-## 🎨 Personalização
+O Vite exibirá no terminal o endereço local da aplicação.
 
-### Informações Pessoais
-Para personalizar o portfólio com suas informações:
+## Scripts
 
-1. **Header Principal** (`src/components/Header/Header.tsx`):
-   - Nome completo
-   - Título profissional
-   - Links das redes sociais (GitHub, LinkedIn, Email)
-   - Link do currículo
-
-2. **Projetos** (`src/components/Projects/Components.tsx`):
-   - Adicione seus projetos no array `projects`
-   - Inclua título, descrição, tecnologias, imagens e links
-
-3. **Habilidades** (`src/components/Skills/Components.tsx`):
-   - Personalize as categorias de habilidades
-   - Adicione suas competências técnicas
-
-4. **Tema e Cores** (`src/styles/theme.ts`):
-   - Modifique as cores do tema
-   - Ajuste breakpoints para responsividade
-
-### Configuração do EmailJS
-Para configurar o formulário de contato:
-1. Crie uma conta no [EmailJS](https://www.emailjs.com/)
-2. Configure o serviço de email
-3. Atualize as credenciais no componente de contato
-
-## ✨ Funcionalidades
-
-- **Header Interativo** - Seção inicial com efeito parallax no mouse e links sociais
-- **Navegação Responsiva** - Menu de navegação adaptável para diferentes dispositivos
-- **Seção de Habilidades** - Exibição organizada das competências técnicas
-- **Portfólio de Projetos** - Galeria de projetos com imagens, descrições e links
-- **Formulário de Contato** - Sistema de contato integrado com EmailJS
-- **Design Responsivo** - Interface adaptável para desktop, tablet e mobile
-- **Animações Suaves** - Transições e efeitos visuais modernos
-
-## 📝 Estrutura do Projeto
-
+```bash
+npm run dev      # inicia o servidor de desenvolvimento
+npm run build    # gera a versão de produção em dist/
+npm run lint     # executa o ESLint
+npm run preview  # visualiza localmente o build de produção
 ```
+
+## Estrutura principal
+
+```text
 src/
-├── components/           # Componentes organizados por seção
-│   ├── Contact/         # Formulário de contato
-│   │   ├── Contact.tsx
-│   │   ├── components.tsx
-│   │   ├── styled.ts
-│   │   └── GMAIL/
-│   ├── Footer/          # Rodapé do site
-│   ├── Header/          # Cabeçalho principal
-│   ├── Navbar/          # Barra de navegação
-│   ├── Projects/        # Seção de projetos
-│   │   ├── Projects.tsx
-│   │   ├── Components.tsx
-│   │   └── styled.ts
-│   └── Skills/          # Seção de habilidades
-│       ├── Skills.tsx
-│       ├── Components.tsx
-│       └── styled.ts
-├── assets/              # Imagens e recursos
+├── components/
+│   ├── Contact/       # contatos e rodapé
+│   ├── Header/        # apresentação inicial
+│   ├── Navbar/        # navegação principal e menu mobile
+│   ├── Projects/      # listagem e dados dos projetos
+│   └── Skills/        # categorias e dados das habilidades
 ├── styles/
-│   └── theme.ts         # Configurações de tema e cores
-├── App.tsx              # Componente principal
-├── main.tsx            # Ponto de entrada
-└── createGlobalStyle.ts # Estilos globais
+│   ├── animations.ts  # animações compartilhadas
+│   └── theme.ts       # cores e breakpoints
+├── App.tsx            # composição das seções
+├── main.tsx           # ponto de entrada da aplicação
+└── vite-env.d.ts      # tipos do Vite
+
+public/
+├── assets/
+│   └── Bruno_Kemel_CV.pdf
+└── bkLOGO.png
+
+createGlobalStyle.ts   # reset e estilos globais
 ```
 
-## 🔧 Scripts Disponíveis
+## Personalização
 
-- `npm run dev` - Inicia o servidor de desenvolvimento
-- `npm run build` - Cria a versão de produção
-- `npm run preview` - Visualiza a versão de produção localmente
-- `npm run lint` - Executa o linter ESLint
+- **Apresentação:** edite `src/components/Header/Header.tsx`.
+- **Projetos:** altere o array em `src/components/Projects/Components.tsx`.
+- **Habilidades:** altere os grupos em `src/components/Skills/Components.tsx`.
+- **Contatos:** edite `src/components/Contact/components.tsx`.
+- **Cores e breakpoints:** ajuste `src/styles/theme.ts`.
+- **Currículo:** substitua `public/assets/Bruno_Kemel_CV.pdf`, mantendo o mesmo nome, ou atualize o caminho usado no Header.
 
-## 🚀 Deploy
+## Build e deploy
 
-### Build para Produção
+Gere o build de produção com:
+
 ```bash
 npm run build
 ```
 
-### Deploy em Plataformas
+O conteúdo será criado em `dist/` e pode ser publicado em serviços como Vercel ou Netlify usando:
 
-**Vercel (Recomendado)**
-1. Conecte seu repositório GitHub à Vercel
-2. Configure o build command: `npm run build`
-3. Configure o output directory: `dist`
-4. Deploy automático a cada push
+- Comando de build: `npm run build`
+- Diretório de saída: `dist`
 
-**Netlify**
-1. Conecte seu repositório GitHub à Netlify
-2. Configure o build command: `npm run build`
-3. Configure o publish directory: `dist`
-
-**GitHub Pages**
-1. Execute `npm run build`
-2. Configure o GitHub Actions para deploy automático
-3. Publique a pasta `dist` na branch `gh-pages`
-
-## 📱 Visualização
-
-O portfólio está otimizado para:
-- **Desktop** - Experiência completa com efeitos interativos
-- **Tablet** - Layout adaptado para telas médias
-- **Mobile** - Interface responsiva e touch-friendly
-
-## 📄 Licença
+## Licença
 
 Este projeto está sob a licença ISC.
