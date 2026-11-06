@@ -8,6 +8,8 @@ import {
   Avatar,
   SocialRow,
   SocialLink,
+  CvPreviewWrapper,
+  CvPreview,
   CvButton,
   Cursor,
   ScrollHint,
@@ -98,9 +100,15 @@ const Header = () => {
             <SocialLink href="mailto:br.kemel@gmail.com">
               ✉ email
             </SocialLink>
-            <CvButton href="/assets/Bruno_Kemel_CV.pdf" download>
-              ↓ currículo
-            </CvButton>
+            <CvPreviewWrapper>
+              <CvPreview
+                src="/assets/Bruno_Kemel_CV.pdf#toolbar=0&navpanes=0"
+                title="Prévia do currículo de Bruno Kemel"
+              />
+              <CvButton href="/assets/Bruno_Kemel_CV.pdf" download>
+                ↓ currículo
+              </CvButton>
+            </CvPreviewWrapper>
           </SocialRow>
         </OutputBlock>
       </Container>

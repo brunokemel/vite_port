@@ -132,6 +132,44 @@ export const SocialLink = styled.a`
   &:hover { color: #4ade80; }
 `
  
+export const CvPreviewWrapper = styled.div`
+  position: relative;
+  margin-left: auto;
+
+  &:hover iframe,
+  &:focus-within iframe {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 520px) {
+    margin-left: 0;
+  }
+`
+
+export const CvPreview = styled.iframe`
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 10px);
+  width: 360px;
+  height: 480px;
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px);
+  transition: opacity 0.15s, visibility 0.15s, transform 0.15s;
+  pointer-events: none;
+  z-index: 10;
+
+  @media (max-width: 520px), (hover: none) {
+    display: none;
+  }
+`
+
 export const CvButton = styled.a`
   font-family: 'DM Mono', 'Fira Code', monospace;
   font-size: 11px;
@@ -144,14 +182,10 @@ export const CvButton = styled.a`
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-left: auto;
   transition: background 0.15s;
  
   &:hover { background: rgba(74, 222, 128, 0.16); }
 
-  @media (max-width: 520px) {
-    margin-left: 0;
-  }
 `
  
 /* ── Cursor blink ── */
