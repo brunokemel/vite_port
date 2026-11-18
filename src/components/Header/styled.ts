@@ -154,63 +154,6 @@ export const SocialLink = styled.a`
   &:hover { color: #074f9e; text-decoration: underline; }
 `
  
-export const CvPreviewWrapper = styled.div`
-  position: relative;
-  margin-left: auto;
-
-  &:hover iframe,
-  &:focus-within iframe {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-
-  @media (max-width: 520px) {
-    margin-left: 0;
-  }
-`
-
-export const CvPreview = styled.iframe`
-  position: absolute;
-  right: 0;
-  bottom: calc(100% + 10px);
-  width: 360px;
-  height: 480px;
-  border: 1px solid #7c9ab8;
-  border-radius: 6px;
-  background: #fff;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(6px);
-  transition: opacity 0.15s, visibility 0.15s, transform 0.15s;
-  pointer-events: none;
-  z-index: 10;
-
-  @media (max-width: 520px), (hover: none) {
-    display: none;
-  }
-`
-
-export const CvButton = styled.a`
-  font-family: 'DM Mono', 'Fira Code', monospace;
-  font-size: 11px;
-  color: #173b68;
-  background: linear-gradient(#fff, #dce8f4);
-  border: 1px solid #7896b4;
-  box-shadow: 1px 1px white inset, -1px -1px #a1b4c8 inset;
-  padding: 3px 10px;
-  border-radius: 4px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: background 0.15s;
- 
-  &:hover { background: linear-gradient(#fff, #c5dcf3); }
-
-`
- 
 /* ── Cursor blink ── */
 export const Cursor = styled.span`
   display: inline-block;

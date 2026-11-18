@@ -8,13 +8,10 @@ import {
   Avatar,
   SocialRow,
   SocialLink,
-  CvPreviewWrapper,
-  CvPreview,
-  CvButton,
   Cursor,
   ScrollHint,
 } from './styled'
- 
+
 const Header = () => {
   return (
     <HeaderContainer id="inicio">
@@ -100,22 +97,6 @@ const Header = () => {
             <SocialLink href="mailto:br.kemel@gmail.com">
               ✉ email
             </SocialLink>
-            <CvPreviewWrapper>
-              <CvPreview
-                src="/assets/Bruno_Kemel_CV.pdf#toolbar=0&navpanes=0"
-                title="Prévia do currículo de Bruno Kemel"
-              />
-              <CvButton
-                href="/assets/Bruno_Kemel_CV.pdf"
-                download="Bruno_Kemel_CV.pdf"
-                target="_blank"
-                rel="noreferrer"
-                type="application/pdf"
-                aria-label="Baixar currículo em PDF; se o navegador não suportar o download, abrir o PDF"
-              >
-                ↓ currículo
-              </CvButton>
-            </CvPreviewWrapper>
           </SocialRow>
         </OutputBlock>
       </Container>
