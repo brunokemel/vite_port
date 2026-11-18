@@ -85,7 +85,7 @@ const IconButton = styled.button`
 const Window = styled.section<{ $x: number; $y: number; $z: number; $maximized: boolean }>`
   position: absolute; z-index: ${({ $z }) => $z};
   left: ${({ $x, $maximized }) => $maximized ? '0' : `${$x}px`}; top: ${({ $y, $maximized }) => $maximized ? '0' : `${$y}px`};
-  width: ${({ $x, $maximized }) => $maximized ? '100%' : `min(1180px, max(0px, calc(100vw - ${$x}px - clamp(168px, 14vw, 280px) - 44px)))`};
+  width: ${({ $x, $maximized }) => $maximized ? '100%' : `min(1180px, max(0px, calc(100vw - ${$x}px - clamp(168px, 24vw, 280px) - 44px)))`};
   height: ${({ $maximized }) => $maximized ? '100%' : 'min(780px, calc(100vh - 105px))'};
   display: flex; flex-direction: column; overflow: hidden;
   background: #f2f6fb; border: 1px solid #073b80; border-radius: 8px 8px 3px 3px;
@@ -103,7 +103,7 @@ const BrowserBar = styled.div`
 `;
 
 const MessengerCard = styled.aside`
-  position: absolute; z-index: 1; right: clamp(8px, 2vw, 30px); top: clamp(8px, 3vh, 30px); width: min(280px, max(168px, 14vw), calc(100vw - 16px)); overflow: hidden;
+  position: absolute; z-index: 1; right: clamp(8px, 2vw, 30px); top: clamp(8px, 3vh, 30px); width: min(280px, max(168px, 24vw), calc(100vw - 16px)); overflow: hidden;
   color: #174674; border: 1px solid #8ca9c4; border-radius: 10px; background: #f2f7fd; box-shadow: 0 8px 24px #14365055;
   .profile { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: linear-gradient(#fff,#c2e4f5); border-bottom: 1px solid #a7c4da; }
   .presence { width: 18px; height: 18px; border-radius: 50%; background: #74c937; box-shadow: 0 0 0 3px #fff; }
@@ -114,11 +114,11 @@ const MessengerCard = styled.aside`
     .profile { gap: 7px; padding: 9px 10px; }
     .presence { width: 15px; height: 15px; }
     .name { font-size: 12px; }
-    .status, .line { font-size: 10px; }
+    .status, .line { font-size: clamp(9px, 1.1vw, 11px); white-space: nowrap; }
     .line { padding: 8px 10px; }
   }
   @media (max-width: 600px) {
-    top: 8px; right: 12px; width: min(220px, calc(100vw - 24px)); border-radius: 3px;
+    top: 8px; right: 12px; width: min(180px, max(140px, 32vw), calc(100vw - 24px)); border-radius: 3px;
     .profile { gap: 7px; padding: 6px 8px; }
     .presence { width: 12px; height: 12px; }
     .name { font-size: 11px; }
@@ -127,7 +127,7 @@ const MessengerCard = styled.aside`
 `;
 
 const Winamp = styled.aside`
-  position: absolute; z-index: 1; right: clamp(8px, 2vw, 30px); bottom: clamp(8px, 3vh, 30px); width: min(280px, max(168px, 14vw), calc(100vw - 16px)); padding: 8px;
+  position: absolute; z-index: 1; right: clamp(8px, 2vw, 30px); bottom: clamp(8px, 3vh, 30px); width: min(280px, max(168px, 24vw), calc(100vw - 16px)); padding: 8px;
   color: #dbe3ea; border: 3px solid #566b7b; background: linear-gradient(#3d4650,#252c33); box-shadow: 0 6px 18px #10253888;
   .top { display: flex; justify-content: space-between; padding: 0 2px 8px; color: #ffd369; font: bold 11px 'Lucida Console',monospace; }
   .display { padding: 12px; color: #37f17a; background: #07130d; font: bold 14px 'Lucida Console',monospace; }
@@ -139,15 +139,15 @@ const Winamp = styled.aside`
   .volume-control button { width: 24px; height: 26px; padding: 0; border: 0; background: transparent; font-size: 15px; }
   .volume-control input { width: 62px; height: 16px; accent-color: #8fc9ff; cursor: pointer; }
   .volume-level { width: 28px; color: #cbd5df; text-align: right; font: 10px 'Lucida Console',monospace; }
-  @media (max-width: 1100px) {
+  @media (max-width: 1200px) {
     padding: 6px;
     .display { padding: 9px; font-size: 12px; }
-    .track { font-size: 9px; }
+    .track { overflow: hidden; font-size: 9px; white-space: nowrap; text-overflow: ellipsis; }
     .controls { gap: 3px; }
-    .controls > button { width: 28px; height: 26px; }
+    .controls > button { width: 24px; height: 26px; }
     .volume-control { gap: 3px; }
-    .volume-control button { width: 20px; }
-    .volume-control input { width: 38px; }
+    .volume-control button { width: 18px; }
+    .volume-control input { width: 32px; }
     .volume-level { display: none; }
   }
   @media (max-width: 420px) {
@@ -155,7 +155,7 @@ const Winamp = styled.aside`
     .volume-control input { width: 32px; }
   }
   @media (max-width: 600px) {
-    right: 8px; bottom: 8px; width: min(190px, calc(100vw - 16px)); padding: 5px;
+    right: 8px; bottom: 8px; width: min(180px, calc(100vw - 16px)); padding: 5px;
     .top { padding-bottom: 4px; font-size: 9px; }
     .display { padding: 6px 8px; font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .track, .controls > button:first-child, .controls > button:last-of-type { display: none; }
@@ -250,7 +250,7 @@ function App() {
       const z = Math.max(1, ...current.map(item => item.z)) + 1;
       if (existing) return current.map(item => item.id === id ? { ...item, minimized: false, z } : item);
       const offset = (current.length - 1) * 28;
-      const width = Math.min(1180, window.innerWidth - 110 - Math.max(168, window.innerWidth * 0.14) - 44);
+      const width = Math.min(1180, window.innerWidth - 110 - Math.max(168, window.innerWidth * 0.24) - 44);
       return [...current, { id, x: Math.max(110, Math.round((window.innerWidth - width) / 2) + offset), y: 58 + offset, minimized: false, maximized: false, z }];
     });
     setActive(id);
