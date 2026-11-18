@@ -54,10 +54,14 @@ const Desktop = styled.main`
   background: url(${wallpaper}) center center / cover no-repeat;
 `;
 
-const DesktopIcons = styled.div`
+const DesktopIcons = styled.div<{ $mobileAppsOpen: boolean }>`
   position: absolute; inset: 18px auto 18px 14px; z-index: 1;
   display: flex; flex-flow: column wrap; align-content: flex-start; gap: 10px; width: 94px;
-  @media (max-width: 600px) { inset: 10px 6px auto; flex-flow: row nowrap; align-content: flex-start; width: auto; height: 72px; gap: 4px; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+  @media (max-width: 600px) {
+    display: ${({ $mobileAppsOpen }) => $mobileAppsOpen ? 'none' : 'grid'};
+    inset: 76px 12px 112px; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 112px;
+    align-content: start; width: auto; gap: 10px; overflow-y: auto; overflow-x: hidden; padding: 2px;
+  }
 `;
 
 const IconButton = styled.button`
@@ -67,18 +71,26 @@ const IconButton = styled.button`
   text-shadow: 1px 1px 2px #102e48, -1px -1px 2px #102e48;
   &:hover, &:focus-visible { background: #b5d9f433; border-color: #d5edff88; outline: 1px dotted white; }
   .icon { font-size: 32px; line-height: 1; filter: drop-shadow(1px 2px 1px #123); }
-  @media (max-width: 600px) { flex: 0 0 58px; width: 58px; min-height: 68px; padding: 4px 2px; font-size: 9px; line-height: 1.1; .icon { font-size: 27px; } }
+  @media (max-width: 600px) {
+    position: relative; flex: none; width: auto; min-height: 96px; padding: 12px; align-items: flex-start; justify-content: space-between;
+    border: 1px solid #d1e9ff; border-radius: 2px; text-align: left; font: bold 12px Tahoma,sans-serif;
+    background: linear-gradient(145deg,#368add,#1457a7); box-shadow: 1px 1px #ffffff66 inset, 0 3px 8px #002c5366;
+    &:nth-child(3n + 2) { background: linear-gradient(145deg,#42a6bd,#176885); }
+    &:nth-child(3n) { background: linear-gradient(145deg,#5c94d7,#315b9e); }
+    &:hover, &:focus-visible { background: linear-gradient(145deg,#5aa8ee,#236ec1); transform: translateY(-1px); }
+    .icon { font-size: 30px; }
+  }
 `;
 
 const Window = styled.section<{ $x: number; $y: number; $z: number; $maximized: boolean }>`
   position: absolute; z-index: ${({ $z }) => $z};
   left: ${({ $x, $maximized }) => $maximized ? '0' : `${$x}px`}; top: ${({ $y, $maximized }) => $maximized ? '0' : `${$y}px`};
-  width: ${({ $maximized }) => $maximized ? '100%' : 'min(1180px, calc(100vw - 150px))'};
+  width: ${({ $x, $maximized }) => $maximized ? '100%' : `min(1180px, max(0px, calc(100vw - ${$x}px - clamp(168px, 14vw, 280px) - 44px)))`};
   height: ${({ $maximized }) => $maximized ? '100%' : 'min(780px, calc(100vh - 105px))'};
   display: flex; flex-direction: column; overflow: hidden;
   background: #f2f6fb; border: 1px solid #073b80; border-radius: 8px 8px 3px 3px;
   box-shadow: 2px 2px 0 #fff9 inset, 0 12px 32px #00345488;
-  @media (max-width: 600px) { left: ${({ $maximized }) => $maximized ? '0' : '4px'}; top: ${({ $maximized }) => $maximized ? '0' : '92px'}; width: calc(100vw - 8px); height: ${({ $maximized }) => $maximized ? '100%' : 'calc(100% - 96px)'}; }
+  @media (max-width: 600px) { left: ${({ $maximized }) => $maximized ? '0' : '4px'}; top: 0; width: calc(100vw - 8px); height: 100%; border-radius: 5px 5px 2px 2px; }
 `;
 
 const BrowserBar = styled.div`
@@ -91,24 +103,31 @@ const BrowserBar = styled.div`
 `;
 
 const MessengerCard = styled.aside`
-  position: absolute; z-index: 1190; right: clamp(8px, 2vw, 30px); top: clamp(8px, 3vh, 30px); width: min(328px, calc(100vw - 16px)); overflow: hidden;
+  position: absolute; z-index: 1; right: clamp(8px, 2vw, 30px); top: clamp(8px, 3vh, 30px); width: min(280px, max(168px, 14vw), calc(100vw - 16px)); overflow: hidden;
   color: #174674; border: 1px solid #8ca9c4; border-radius: 10px; background: #f2f7fd; box-shadow: 0 8px 24px #14365055;
   .profile { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: linear-gradient(#fff,#c2e4f5); border-bottom: 1px solid #a7c4da; }
   .presence { width: 18px; height: 18px; border-radius: 50%; background: #74c937; box-shadow: 0 0 0 3px #fff; }
   .name { font-weight: bold; font-size: 16px; } .status { margin-top: 4px; color: #657d92; font-size: 13px; }
   .line { display: block; width: 100%; padding: 12px 16px; color: #174674; text-align: left; border: 0; border-bottom: 1px solid #d2dfeb; background: transparent; font: 13px Tahoma,sans-serif; }
   button.line { cursor: pointer; } button.line:hover { background: #e1f0fd; }
+  @media (max-width: 1100px) {
+    .profile { gap: 7px; padding: 9px 10px; }
+    .presence { width: 15px; height: 15px; }
+    .name { font-size: 12px; }
+    .status, .line { font-size: 10px; }
+    .line { padding: 8px 10px; }
+  }
   @media (max-width: 600px) {
-    top: 86px; right: 8px; width: min(300px, calc(100vw - 16px));
-    .profile { gap: 9px; padding: 10px 12px; }
-    .name { font-size: 14px; }
-    .status, .line { font-size: 11px; }
-    .line { padding: 9px 12px; }
+    top: 8px; right: 12px; width: min(220px, calc(100vw - 24px)); border-radius: 3px;
+    .profile { gap: 7px; padding: 6px 8px; }
+    .presence { width: 12px; height: 12px; }
+    .name { font-size: 11px; }
+    .status, .profile > span:last-child, .line { display: none; }
   }
 `;
 
 const Winamp = styled.aside`
-  position: absolute; z-index: 1200; right: clamp(8px, 2vw, 30px); bottom: clamp(8px, 3vh, 30px); width: min(328px, calc(100vw - 16px)); padding: 8px;
+  position: absolute; z-index: 1; right: clamp(8px, 2vw, 30px); bottom: clamp(8px, 3vh, 30px); width: min(280px, max(168px, 14vw), calc(100vw - 16px)); padding: 8px;
   color: #dbe3ea; border: 3px solid #566b7b; background: linear-gradient(#3d4650,#252c33); box-shadow: 0 6px 18px #10253888;
   .top { display: flex; justify-content: space-between; padding: 0 2px 8px; color: #ffd369; font: bold 11px 'Lucida Console',monospace; }
   .display { padding: 12px; color: #37f17a; background: #07130d; font: bold 14px 'Lucida Console',monospace; }
@@ -120,14 +139,29 @@ const Winamp = styled.aside`
   .volume-control button { width: 24px; height: 26px; padding: 0; border: 0; background: transparent; font-size: 15px; }
   .volume-control input { width: 62px; height: 16px; accent-color: #8fc9ff; cursor: pointer; }
   .volume-level { width: 28px; color: #cbd5df; text-align: right; font: 10px 'Lucida Console',monospace; }
-  @media (max-width: 420px) {
+  @media (max-width: 1100px) {
     padding: 6px;
     .display { padding: 9px; font-size: 12px; }
     .track { font-size: 9px; }
-    .controls button { width: 32px; height: 26px; }
+    .controls { gap: 3px; }
+    .controls > button { width: 28px; height: 26px; }
     .volume-control { gap: 3px; }
-    .volume-control input { width: 48px; }
-    .volume-level { width: 25px; font-size: 9px; }
+    .volume-control button { width: 20px; }
+    .volume-control input { width: 38px; }
+    .volume-level { display: none; }
+  }
+  @media (max-width: 420px) {
+    .controls > button { width: 26px; }
+    .volume-control input { width: 32px; }
+  }
+  @media (max-width: 600px) {
+    right: 8px; bottom: 8px; width: min(190px, calc(100vw - 16px)); padding: 5px;
+    .top { padding-bottom: 4px; font-size: 9px; }
+    .display { padding: 6px 8px; font-size: 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .track, .controls > button:first-child, .controls > button:last-of-type { display: none; }
+    .controls { gap: 5px; padding-top: 5px; }
+    .controls > button { width: 26px; height: 24px; }
+    .volume-control input { width: 32px; }
   }
 `;
 
@@ -187,15 +221,11 @@ const TaskItems = styled.div`
 `;
 
 function App() {
-  const [windows, setWindows] = useState<WindowState[]>(() => [{
-    id: 'about',
-    x: Math.max(110, Math.round((window.innerWidth - Math.min(1180, window.innerWidth - 150)) / 2)),
-    y: 58,
-    minimized: false,
-    maximized: false,
-    z: 2,
+  const [windows, setWindows] = useState<WindowState[]>(() => window.matchMedia('(max-width: 600px)').matches ? [] : [{
+    id: 'about', x: Math.max(110, Math.round((window.innerWidth - Math.min(1180, window.innerWidth - 150)) / 2)),
+    y: 58, minimized: false, maximized: false, z: 2,
   }]);
-  const [active, setActive] = useState<AppId | null>('about');
+  const [active, setActive] = useState<AppId | null>(() => window.matchMedia('(max-width: 600px)').matches ? null : 'about');
   const [startOpen, setStartOpen] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(0.4);
@@ -203,6 +233,7 @@ function App() {
   const [now, setNow] = useState(() => new Date());
   const dragState = useRef<DragState | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const mobileAppOpen = window.matchMedia('(max-width: 600px)').matches && windows.some(item => !item.minimized);
   useEffect(() => {
     const timer = window.setInterval(() => setNow(new Date()), 30_000);
     return () => window.clearInterval(timer);
@@ -219,7 +250,7 @@ function App() {
       const z = Math.max(1, ...current.map(item => item.z)) + 1;
       if (existing) return current.map(item => item.id === id ? { ...item, minimized: false, z } : item);
       const offset = (current.length - 1) * 28;
-      const width = Math.min(1180, window.innerWidth - 150);
+      const width = Math.min(1180, window.innerWidth - 110 - Math.max(168, window.innerWidth * 0.14) - 44);
       return [...current, { id, x: Math.max(110, Math.round((window.innerWidth - width) / 2) + offset), y: 58 + offset, minimized: false, maximized: false, z }];
     });
     setActive(id);
@@ -306,7 +337,7 @@ function App() {
     <ThemeProvider theme={breakpoints}>
       <GlobalStyle />
       <Desktop aria-label="Área de trabalho do DevKemel">
-        <DesktopIcons>
+        <DesktopIcons $mobileAppsOpen={mobileAppOpen}>
           {apps.map(app => <IconButton key={app.id} onClick={() => openApp(app.id)} aria-label={`Abrir ${app.title}`}><span className="icon" aria-hidden="true">{app.id === 'about' ? '🖥️' : app.id === 'skills' ? '📂' : app.id === 'projects' ? '📁' : app.id === 'contact' ? '💬' : '📄'}</span><span>{app.id === 'about' ? 'Meu Computador' : app.id === 'skills' ? 'Habilidades' : app.id === 'projects' ? 'Meus Projetos' : app.id === 'contact' ? 'MSN Messenger' : 'Currículo PDF'}</span></IconButton>)}
         </DesktopIcons>
         <MessengerCard aria-label="Cartão de contato MSN Messenger">
