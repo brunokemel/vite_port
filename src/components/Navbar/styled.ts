@@ -8,12 +8,11 @@ export const Nav = styled.nav<{ $isScrolled: boolean }>`
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 1rem 2rem;
-  background-color: ${({ $isScrolled }) =>
-    $isScrolled ? colors.newHeaderColor : 'transparent'};
-  box-shadow: ${({ $isScrolled }) =>
-    $isScrolled ? `0 2px 4px ${colors.newHeaderColor}15` : 'none'};
-  transition: all 0.3s ease;
+  padding: 0.7rem 2rem;
+  background: linear-gradient(180deg, #3d91e8 0%, #1763bd 45%, #0c4fa4 100%);
+  border-bottom: 2px solid #083b83;
+  box-shadow: 0 2px 8px #00274a66;
+  transition: filter 0.2s ease;
 
   @media (max-width: ${breakpoints.tablet}) {
     padding: 0.75rem 1rem;
@@ -54,9 +53,11 @@ export const NavContainer = styled.div`
 `;
 
 export const Logo = styled.a`
-  font-family: "DM Mono", monospace;
+  font-family: Tahoma, Verdana, sans-serif;
   text-decoration: none;
-  color: ${colors.spanColor};
+  color: white;
+  font-weight: 700;
+  text-shadow: 1px 1px #16437a;
 
   white-space: nowrap;
 
@@ -65,9 +66,9 @@ export const Logo = styled.a`
   }
 `;
 export const Title = styled.span`
-  font-family: "DM Mono", monospace;
+  font-family: Tahoma, Verdana, sans-serif;
   text-decoration: none;
-  color: ${colors.secondary};`;
+  color: #dcecff;`;
 
 export const NavLinks = styled.div<{ $isOpen: boolean }>`
   display: flex;
@@ -83,9 +84,7 @@ export const NavLinks = styled.div<{ $isOpen: boolean }>`
     bottom: 0;
     width: 50%;
     max-width: 300px;
-    background-color: rgba(48, 48, 77, 0.7);
-    backdrop-filter: blur(8px);         
-    -webkit-backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, #f9fbff, #c7d9ed);
     flex-direction: column;
     padding: 5rem 2rem;
     transition: right 0.3s ease, visibility 0.3s ease;
@@ -98,15 +97,25 @@ export const NavLinks = styled.div<{ $isOpen: boolean }>`
 `;
 
 export const NavLink = styled.a`
-  color: ${colors.liColor};
+  color: white;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
-  font-family: "DM Mono", monospace;
-  font-size: 0.8rem;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 0.9rem;
+  padding: 7px 12px;
+  border: 1px solid transparent;
+  border-radius: 3px;
 
   &:hover {
-    color: ${colors.blue};
+    color: white;
+    background: linear-gradient(#6db5f2, #1a5eae);
+    border-color: #9cc8f3 #0b4387 #0b4387 #9cc8f3;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    color: #174674;
+    &:hover { color: #0b4f99; background: #dcecff; }
   }
 `;
 

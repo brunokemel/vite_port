@@ -9,8 +9,9 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: #121212;
+    font-family: Tahoma, Verdana, sans-serif;
+    color: #17263a;
+    background: #1676a8;
     overflow-x: hidden;
   }
 
@@ -29,10 +30,20 @@ export const GlobalStyle = createGlobalStyle`
 
   a, button {
     &:focus-visible {
-      outline: 2px solid #4ade80;
+      outline: 2px solid #ffcc33;
       outline-offset: 4px;
     }
   }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(ellipse at 72% 38%, #63c9ef 0%, #218ec4 38%, #08619a 72%, #064777 100%);
+  }
+
+  ::selection { background: #316ac5; color: white; }
 
   @media (prefers-reduced-motion: reduce) {
     html {

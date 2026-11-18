@@ -17,7 +17,7 @@ export const HeaderContainer = styled.header`
   flex-direction: column;
   justify-content: center;
   padding: 7rem 2rem 5rem;
-  background-color: #0d0d0d;
+  background: transparent;
   position: relative;
   overflow: hidden;
 `
@@ -26,35 +26,57 @@ export const Container = styled.div`
   max-width: 900px;
   width: 100%;
   margin: 0 auto;
+  padding: 48px 28px 28px;
+  position: relative;
+  background: linear-gradient(135deg, #fff 0%, #f4f8fc 100%);
+  border: 1px solid #0b397e;
+  border-radius: 9px 9px 4px 4px;
+  box-shadow: 2px 3px 0 #ffffffaa inset, 0 16px 38px #00345b66;
+
+  &::before {
+    content: 'DevKemel.exe';
+    position: absolute;
+    left: 0; right: 0; top: 0;
+    height: 34px;
+    padding: 8px 14px;
+    border-radius: 8px 8px 0 0;
+    color: white;
+    font: bold 14px Tahoma, sans-serif;
+    text-shadow: 1px 1px #173f7b;
+    background: linear-gradient(180deg, #5da8f3 0%, #2777d1 35%, #1556b5 100%);
+    border-bottom: 1px solid #083b83;
+  }
+
+  @media (max-width: 520px) { padding: 46px 18px 22px; }
 `
 
  
 /* ── Prompt line ── */
 export const PromptLine = styled.div`
-  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-family: Tahoma, Verdana, sans-serif;
   font-size: 13px;
-  color: #555;
+  color: #586a7d;
   display: flex;
   align-items: center;
   gap: 8px;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #292929;
+  border-bottom: 1px solid #cad7e4;
   opacity: 0;
   animation: ${fadeUp} 0.4s ease forwards;
   animation-delay: 100ms;
   flex-wrap: wrap;
 
-  .user { color: #4ade80; }
-  .cmd  { color: #e2e8f0; }
-  .flag { color: #60a5fa; }
+  .user { color: #16813b; }
+  .cmd  { color: #263d58; }
+  .flag { color: #1265b4; }
 `
  
 /* ── Output block ── */
 export const OutputBlock = styled.div`
-  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-family: Tahoma, Verdana, sans-serif;
   font-size: 13px;
-  color: #666;
-  line-height: 2;
+  color: #4b5c6e;
+  line-height: 1.8;
   opacity: 0;
   animation: ${fadeUp} 0.4s ease forwards;
   animation-delay: 200ms;
@@ -67,11 +89,11 @@ export const Line = styled.div`
   margin-bottom: 2px;
   overflow-wrap: anywhere;
  
-  .key   { color: #444; min-width: 100px; flex-shrink: 0; }
-  .val   { color: #e2e8f0; }
-  .green { color: #4ade80; }
-  .amber { color: #f59e0b; }
-  .blue  { color: #60a5fa; }
+  .key   { color: #617488; min-width: 100px; flex-shrink: 0; }
+  .val   { color: #20354a; }
+  .green { color: #147b36; }
+  .amber { color: #a35b00; }
+  .blue  { color: #145fa8; }
 
   @media (max-width: 520px) {
     flex-direction: column;
@@ -84,7 +106,7 @@ export const Line = styled.div`
  
 export const Divider = styled.div`
   height: 1px;
-  background: #1e1e1e;
+  background: #d5e0eb;
   margin: 1.25rem 0;
 `
 
@@ -95,7 +117,7 @@ export const Avatar = styled.img`
   display: block;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #1e1e1e;
+  border: 2px solid #8eaac6;
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: ${fadeUp} 0.4s ease forwards;
@@ -108,7 +130,7 @@ export const SocialRow = styled.div`
   gap: 16px;
   margin-top: 1.5rem;
   padding-top: 1.25rem;
-  border-top: 1px solid #1e1e1e;
+  border-top: 1px solid #cad7e4;
   opacity: 0;
   animation: ${fadeUp} 0.4s ease forwards;
   animation-delay: 350ms;
@@ -120,16 +142,16 @@ export const SocialRow = styled.div`
 `
  
 export const SocialLink = styled.a`
-  font-family: 'DM Mono', 'Fira Code', monospace;
+  font-family: Tahoma, Verdana, sans-serif;
   font-size: 11px;
-  color: #444;
+  color: #315b84;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 5px;
   transition: color 0.15s;
  
-  &:hover { color: #4ade80; }
+  &:hover { color: #074f9e; text-decoration: underline; }
 `
  
 export const CvPreviewWrapper = styled.div`
@@ -154,7 +176,7 @@ export const CvPreview = styled.iframe`
   bottom: calc(100% + 10px);
   width: 360px;
   height: 480px;
-  border: 1px solid rgba(74, 222, 128, 0.25);
+  border: 1px solid #7c9ab8;
   border-radius: 6px;
   background: #fff;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
@@ -173,9 +195,10 @@ export const CvPreview = styled.iframe`
 export const CvButton = styled.a`
   font-family: 'DM Mono', 'Fira Code', monospace;
   font-size: 11px;
-  color: #4ade80;
-  background: rgba(74, 222, 128, 0.08);
-  border: 1px solid rgba(74, 222, 128, 0.25);
+  color: #173b68;
+  background: linear-gradient(#fff, #dce8f4);
+  border: 1px solid #7896b4;
+  box-shadow: 1px 1px white inset, -1px -1px #a1b4c8 inset;
   padding: 3px 10px;
   border-radius: 4px;
   text-decoration: none;
@@ -184,7 +207,7 @@ export const CvButton = styled.a`
   gap: 5px;
   transition: background 0.15s;
  
-  &:hover { background: rgba(74, 222, 128, 0.16); }
+  &:hover { background: linear-gradient(#fff, #c5dcf3); }
 
 `
  
@@ -193,7 +216,7 @@ export const Cursor = styled.span`
   display: inline-block;
   width: 8px;
   height: 14px;
-  background: #4ade80;
+  background: #2b71c9;
   margin-left: 4px;
   vertical-align: middle;
   animation: ${blink} 1.1s step-start infinite;
@@ -207,7 +230,7 @@ export const ScrollHint = styled.div`
   transform: translateX(-50%);
   font-family: 'DM Mono', 'Fira Code', monospace;
   font-size: 11px;
-  color: #333;
+  color: #e7f4ff;
   display: flex;
   flex-direction: column;
   align-items: center;
