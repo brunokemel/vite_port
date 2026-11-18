@@ -105,7 +105,14 @@ const Header = () => {
                 src="/assets/Bruno_Kemel_CV.pdf#toolbar=0&navpanes=0"
                 title="Prévia do currículo de Bruno Kemel"
               />
-              <CvButton href="/assets/Bruno_Kemel_CV.pdf" download>
+              <CvButton
+                href="/assets/Bruno_Kemel_CV.pdf"
+                download="Bruno_Kemel_CV.pdf"
+                target="_blank"
+                rel="noreferrer"
+                type="application/pdf"
+                aria-label="Baixar currículo em PDF; se o navegador não suportar o download, abrir o PDF"
+              >
                 ↓ currículo
               </CvButton>
             </CvPreviewWrapper>
